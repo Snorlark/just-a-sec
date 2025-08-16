@@ -1,0 +1,554 @@
+-- Merging decision tree log ---
+application
+INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:14:5-45:19
+INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml
+MERGED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/0df5cf7edba8bddcd280f8d9be1e4c56/transformed/jetified-camera-core-1.5.0-beta01/AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/0df5cf7edba8bddcd280f8d9be1e4c56/transformed/jetified-camera-core-1.5.0-beta01/AndroidManifest.xml:23:5-34:19
+MERGED from [:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-13:19
+MERGED from [:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-13:19
+MERGED from [com.google.android.gms:play-services-location:21.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/cc3336a24e8ef5d3d66fff7f5ca80854/transformed/jetified-play-services-location-21.2.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:21.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/cc3336a24e8ef5d3d66fff7f5ca80854/transformed/jetified-play-services-location-21.2.0/AndroidManifest.xml:7:5-20
+MERGED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:5-32:19
+MERGED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:5-32:19
+MERGED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:22:5-29:19
+MERGED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:22:5-29:19
+MERGED from [com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7b180219ad72ca48e76b8a5127003ab7/transformed/jetified-play-services-tasks-18.1.0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7b180219ad72ca48e76b8a5127003ab7/transformed/jetified-play-services-tasks-18.1.0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e0d9d3675465ff69d847e2f781f20c61/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e0d9d3675465ff69d847e2f781f20c61/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/92a2169b5b2674c8bbe10e1b1d80da0f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/92a2169b5b2674c8bbe10e1b1d80da0f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
+	android:name
+		INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml
+manifest
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:1:1-57:12
+MERGED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:1:1-57:12
+INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+MERGED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-15:12
+MERGED from [:package_info_plus] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/package_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:video_player_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/video_player_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.media3:media3-exoplayer-hls:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a8b25ef637a36f4ec054f228a44fdffc/transformed/jetified-media3-exoplayer-hls-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer-dash:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4c43270d238e262940f9cb0e38d83204/transformed/jetified-media3-exoplayer-dash-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer-rtsp:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/3a38e992c16e05b11eba2a3f4660a190/transformed/jetified-media3-exoplayer-rtsp-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer-smoothstreaming:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/62af8c6bef559423bf6b0adeee730af2/transformed/jetified-media3-exoplayer-smoothstreaming-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-exoplayer:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/34e8173ce89df20168a3523175f8024b/transformed/jetified-media3-exoplayer-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media3:media3-extractor:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/2c2e1861297a6834c7c7f05ba59e04d0/transformed/jetified-media3-extractor-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-container:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/446e95dd6bc92487da8054cd858ffe27/transformed/jetified-media3-container-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-datasource:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d909c945e248f28aff74f350a6ee347e/transformed/jetified-media3-datasource-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-decoder:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/093aaab8eaf50b551ff1ccea35d60a2b/transformed/jetified-media3-decoder-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-database:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4e85b57882d50d818da8fd8c1a6b78f0/transformed/jetified-media3-database-1.5.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media3:media3-common:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/f296a6abffc60adb15ebff81288a4a47/transformed/jetified-media3-common-1.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.camera:camera-video:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/021b690fbdb983b6c3272f11be1bb5be/transformed/jetified-camera-video-1.5.0-beta01/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-lifecycle:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/657914bb60363aff844f139aa66fcd32/transformed/jetified-camera-lifecycle-1.5.0-beta01/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-core:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/0df5cf7edba8bddcd280f8d9be1e4c56/transformed/jetified-camera-core-1.5.0-beta01/AndroidManifest.xml:17:1-36:12
+MERGED from [:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-15:12
+MERGED from [com.google.android.gms:play-services-location:21.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/cc3336a24e8ef5d3d66fff7f5ca80854/transformed/jetified-play-services-location-21.2.0/AndroidManifest.xml:2:1-9:12
+MERGED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-34:12
+MERGED from [:flutter_plugin_android_lifecycle] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:image_cropper] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_cropper/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.preference:preference:1.2.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/0098a6e93522fecc805d8900172003dc/transformed/preference-1.2.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/75e1bcd7a8b61b1e132d50e7766bfd37/transformed/recyclerview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/cb98276ae8bdd946a2259a69bef27bdf/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/74ed8ceaa55f9ae57c7b49acd30346c2/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.window:window-java:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c1f85211ae6978d0218d51595a7f7e62/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:17:1-21:12
+MERGED from [com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7b180219ad72ca48e76b8a5127003ab7/transformed/jetified-play-services-tasks-18.1.0/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:16:1-26:12
+MERGED from [com.github.yalantis:ucrop:2.2.10] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9eb62c952d32f89f3912cf38a0565b6f/transformed/jetified-ucrop-2.2.10/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a12a090674da1baef97900c09c2e9654/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/67e431d42222568371fff0afd22bbdc6/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.4.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/45af1ebc35cbf9d2d2886a132166b73a/transformed/transition-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.7.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/2e4c2e4e231b6a1dd462fb9cdc4ff977/transformed/jetified-fragment-ktx-1.7.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment:1.7.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/55520e4df2220e27f13f0bbb7467d11a/transformed/fragment-1.7.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6d6ee565ab495ccfff8140c2f79bcdec/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d6334635279cb43af07c2144a95c2be9/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ddd5e7b38041965968ff0c456e5ef322/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/fd3810ce99ffe1cc26d54f0b91968d35/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/2899c534f3de5608a8a60403e44e6ec5/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.activity:activity-ktx:1.10.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/68742d1210f2bc7bf3437fb32e500689/transformed/jetified-activity-ktx-1.10.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.10.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/75e4fbbc117a05e46af63afcd91a7463/transformed/jetified-activity-1.10.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a1682fe25d19efcf6ed57ec9bfdc01f5/transformed/jetified-lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/1da3d52bf544e2149dd46ce2061a20cf/transformed/jetified-lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ebeb29d7113d60e59d5e0acf92f847f3/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/1b91be3af319ede480d7185430690ee1/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e2e21678784b3eef6b33f576b1691a56/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e0eede8414d1ee0e5f236daeb1a2e59a/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c092edbccc16347970ed4f22e8da111a/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ebca0abd79b4e189ce4efe6f41f957a4/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/b3d51a44ab6b56289d4858158a1ad6dd/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c7156a54e8f0502a1f8f57797d8b3e6e/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a1c44aee338451e28503a6edfdb66173/transformed/jetified-core-ktx-1.16.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/58a0920e123e93dd6aa702d27ab7530e/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7ba2c056d15ac2bb85e5cc14a5abc112/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a4220b5ee723fba7acc664a2b5c85228/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a955e1aaa27844724e860bd6269b5afd/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7c5a81a775ceb5f896270c240e3627f0/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/3d3f16dd28e73e73ebdd49d75e0396da/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c458939f30f1e90860cb5a0c34566e85/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e0d9d3675465ff69d847e2f781f20c61/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/285b6d6abe2dd4ba9515886e610a7341/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/bf2859593199ff8de38d02c512c987f0/transformed/jetified-tracing-ktx-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /Users/larkbabao/.gradle/caches/8.10.2/transforms/3b98555939aa5eea06aa9fccf2cf9525/transformed/exifinterface-1.3.7/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ff849810dfe34a0ab790c402787c149e/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ccaaf8ba0ff17d4bbcf5fc9064ae7a64/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/92a2169b5b2674c8bbe10e1b1d80da0f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e4e9d33e8be7718e1e9997a4b8a9b898/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.window.extensions.core:core:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/47506b70b93177473c53f4d5d7e77c91/transformed/jetified-core-1.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/76a0dd850d9f18b6d5dce2588e83d61b/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e62025dd32ba7b1543d2002b823cb58b/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/768c044a1b4db4aa31548ac9b4db55c8/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-viewtree:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/1d1d008dbdc103dccf010f958cec393c/transformed/jetified-core-viewtree-1.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9e1412f82216e9a99f9f845f4567c1f2/transformed/jetified-relinker-1.4.5/AndroidManifest.xml:2:1-7:12
+	package
+		INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:3:5-76
+	android:name
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:3:22-73
+uses-permission#android.permission.CAMERA
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:4:5-65
+MERGED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:5-65
+MERGED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:4:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:5:5-70
+MERGED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:5-71
+MERGED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:5-71
+	android:name
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:5:22-68
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:10:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:11:5-81
+MERGED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:5-13:38
+MERGED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:5-13:38
+	android:maxSdkVersion
+		ADDED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:13:9-35
+	android:name
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:11:22-78
+queries
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:51:5-56:15
+intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:52:9-55:18
+action#android.intent.action.PROCESS_TEXT
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:53:13-72
+	android:name
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:53:21-70
+data
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:54:13-50
+	android:mimeType
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:54:19-48
+uses-permission#android.permission.INTERNET
+ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml:6:22-64
+uses-sdk
+INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml
+INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml
+MERGED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:package_info_plus] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/package_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:package_info_plus] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/package_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:video_player_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/video_player_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:video_player_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/video_player_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [androidx.media3:media3-exoplayer-hls:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a8b25ef637a36f4ec054f228a44fdffc/transformed/jetified-media3-exoplayer-hls-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-hls:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a8b25ef637a36f4ec054f228a44fdffc/transformed/jetified-media3-exoplayer-hls-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-dash:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4c43270d238e262940f9cb0e38d83204/transformed/jetified-media3-exoplayer-dash-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-dash:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4c43270d238e262940f9cb0e38d83204/transformed/jetified-media3-exoplayer-dash-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-rtsp:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/3a38e992c16e05b11eba2a3f4660a190/transformed/jetified-media3-exoplayer-rtsp-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-rtsp:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/3a38e992c16e05b11eba2a3f4660a190/transformed/jetified-media3-exoplayer-rtsp-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-smoothstreaming:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/62af8c6bef559423bf6b0adeee730af2/transformed/jetified-media3-exoplayer-smoothstreaming-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer-smoothstreaming:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/62af8c6bef559423bf6b0adeee730af2/transformed/jetified-media3-exoplayer-smoothstreaming-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/34e8173ce89df20168a3523175f8024b/transformed/jetified-media3-exoplayer-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-exoplayer:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/34e8173ce89df20168a3523175f8024b/transformed/jetified-media3-exoplayer-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-extractor:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/2c2e1861297a6834c7c7f05ba59e04d0/transformed/jetified-media3-extractor-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-extractor:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/2c2e1861297a6834c7c7f05ba59e04d0/transformed/jetified-media3-extractor-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-container:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/446e95dd6bc92487da8054cd858ffe27/transformed/jetified-media3-container-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-container:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/446e95dd6bc92487da8054cd858ffe27/transformed/jetified-media3-container-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-datasource:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d909c945e248f28aff74f350a6ee347e/transformed/jetified-media3-datasource-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-datasource:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d909c945e248f28aff74f350a6ee347e/transformed/jetified-media3-datasource-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-decoder:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/093aaab8eaf50b551ff1ccea35d60a2b/transformed/jetified-media3-decoder-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-decoder:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/093aaab8eaf50b551ff1ccea35d60a2b/transformed/jetified-media3-decoder-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-database:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4e85b57882d50d818da8fd8c1a6b78f0/transformed/jetified-media3-database-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-database:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4e85b57882d50d818da8fd8c1a6b78f0/transformed/jetified-media3-database-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-common:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/f296a6abffc60adb15ebff81288a4a47/transformed/jetified-media3-common-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media3:media3-common:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/f296a6abffc60adb15ebff81288a4a47/transformed/jetified-media3-common-1.5.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.camera:camera-video:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/021b690fbdb983b6c3272f11be1bb5be/transformed/jetified-camera-video-1.5.0-beta01/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/021b690fbdb983b6c3272f11be1bb5be/transformed/jetified-camera-video-1.5.0-beta01/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/657914bb60363aff844f139aa66fcd32/transformed/jetified-camera-lifecycle-1.5.0-beta01/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/657914bb60363aff844f139aa66fcd32/transformed/jetified-camera-lifecycle-1.5.0-beta01/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/0df5cf7edba8bddcd280f8d9be1e4c56/transformed/jetified-camera-core-1.5.0-beta01/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/0df5cf7edba8bddcd280f8d9be1e4c56/transformed/jetified-camera-core-1.5.0-beta01/AndroidManifest.xml:21:5-44
+MERGED from [:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:21.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/cc3336a24e8ef5d3d66fff7f5ca80854/transformed/jetified-play-services-location-21.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:21.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/cc3336a24e8ef5d3d66fff7f5ca80854/transformed/jetified-play-services-location-21.2.0/AndroidManifest.xml:5:5-44
+MERGED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:6:5-44
+MERGED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:6:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_plugin_android_lifecycle] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:image_cropper] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_cropper/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:image_cropper] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_cropper/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/path_provider_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [androidx.preference:preference:1.2.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/0098a6e93522fecc805d8900172003dc/transformed/preference-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/0098a6e93522fecc805d8900172003dc/transformed/preference-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/75e1bcd7a8b61b1e132d50e7766bfd37/transformed/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/75e1bcd7a8b61b1e132d50e7766bfd37/transformed/recyclerview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/cb98276ae8bdd946a2259a69bef27bdf/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/cb98276ae8bdd946a2259a69bef27bdf/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/74ed8ceaa55f9ae57c7b49acd30346c2/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/74ed8ceaa55f9ae57c7b49acd30346c2/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window:window-java:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c1f85211ae6978d0218d51595a7f7e62/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:19:5-44
+MERGED from [androidx.window:window-java:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c1f85211ae6978d0218d51595a7f7e62/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:19:5-44
+MERGED from [com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7b180219ad72ca48e76b8a5127003ab7/transformed/jetified-play-services-tasks-18.1.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7b180219ad72ca48e76b8a5127003ab7/transformed/jetified-play-services-tasks-18.1.0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:18:5-43
+MERGED from [com.github.yalantis:ucrop:2.2.10] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9eb62c952d32f89f3912cf38a0565b6f/transformed/jetified-ucrop-2.2.10/AndroidManifest.xml:5:5-44
+MERGED from [com.github.yalantis:ucrop:2.2.10] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9eb62c952d32f89f3912cf38a0565b6f/transformed/jetified-ucrop-2.2.10/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a12a090674da1baef97900c09c2e9654/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a12a090674da1baef97900c09c2e9654/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/67e431d42222568371fff0afd22bbdc6/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/67e431d42222568371fff0afd22bbdc6/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.4.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/45af1ebc35cbf9d2d2886a132166b73a/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/45af1ebc35cbf9d2d2886a132166b73a/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.7.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/2e4c2e4e231b6a1dd462fb9cdc4ff977/transformed/jetified-fragment-ktx-1.7.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.7.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/2e4c2e4e231b6a1dd462fb9cdc4ff977/transformed/jetified-fragment-ktx-1.7.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.7.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/55520e4df2220e27f13f0bbb7467d11a/transformed/fragment-1.7.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.7.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/55520e4df2220e27f13f0bbb7467d11a/transformed/fragment-1.7.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6d6ee565ab495ccfff8140c2f79bcdec/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6d6ee565ab495ccfff8140c2f79bcdec/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d6334635279cb43af07c2144a95c2be9/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d6334635279cb43af07c2144a95c2be9/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ddd5e7b38041965968ff0c456e5ef322/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ddd5e7b38041965968ff0c456e5ef322/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/fd3810ce99ffe1cc26d54f0b91968d35/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/fd3810ce99ffe1cc26d54f0b91968d35/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/2899c534f3de5608a8a60403e44e6ec5/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/2899c534f3de5608a8a60403e44e6ec5/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.activity:activity-ktx:1.10.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/68742d1210f2bc7bf3437fb32e500689/transformed/jetified-activity-ktx-1.10.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.10.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/68742d1210f2bc7bf3437fb32e500689/transformed/jetified-activity-ktx-1.10.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.10.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/75e4fbbc117a05e46af63afcd91a7463/transformed/jetified-activity-1.10.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.10.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/75e4fbbc117a05e46af63afcd91a7463/transformed/jetified-activity-1.10.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a1682fe25d19efcf6ed57ec9bfdc01f5/transformed/jetified-lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a1682fe25d19efcf6ed57ec9bfdc01f5/transformed/jetified-lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/1da3d52bf544e2149dd46ce2061a20cf/transformed/jetified-lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/1da3d52bf544e2149dd46ce2061a20cf/transformed/jetified-lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ebeb29d7113d60e59d5e0acf92f847f3/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ebeb29d7113d60e59d5e0acf92f847f3/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/1b91be3af319ede480d7185430690ee1/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/1b91be3af319ede480d7185430690ee1/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e2e21678784b3eef6b33f576b1691a56/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e2e21678784b3eef6b33f576b1691a56/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e0eede8414d1ee0e5f236daeb1a2e59a/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e0eede8414d1ee0e5f236daeb1a2e59a/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c092edbccc16347970ed4f22e8da111a/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c092edbccc16347970ed4f22e8da111a/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ebca0abd79b4e189ce4efe6f41f957a4/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ebca0abd79b4e189ce4efe6f41f957a4/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/b3d51a44ab6b56289d4858158a1ad6dd/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/b3d51a44ab6b56289d4858158a1ad6dd/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c7156a54e8f0502a1f8f57797d8b3e6e/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c7156a54e8f0502a1f8f57797d8b3e6e/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a1c44aee338451e28503a6edfdb66173/transformed/jetified-core-ktx-1.16.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a1c44aee338451e28503a6edfdb66173/transformed/jetified-core-ktx-1.16.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/58a0920e123e93dd6aa702d27ab7530e/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/58a0920e123e93dd6aa702d27ab7530e/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7ba2c056d15ac2bb85e5cc14a5abc112/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7ba2c056d15ac2bb85e5cc14a5abc112/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a4220b5ee723fba7acc664a2b5c85228/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a4220b5ee723fba7acc664a2b5c85228/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a955e1aaa27844724e860bd6269b5afd/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/a955e1aaa27844724e860bd6269b5afd/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7c5a81a775ceb5f896270c240e3627f0/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/7c5a81a775ceb5f896270c240e3627f0/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/3d3f16dd28e73e73ebdd49d75e0396da/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/3d3f16dd28e73e73ebdd49d75e0396da/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c458939f30f1e90860cb5a0c34566e85/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/c458939f30f1e90860cb5a0c34566e85/transformed/jetified-annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e0d9d3675465ff69d847e2f781f20c61/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e0d9d3675465ff69d847e2f781f20c61/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/285b6d6abe2dd4ba9515886e610a7341/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/285b6d6abe2dd4ba9515886e610a7341/transformed/jetified-tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/bf2859593199ff8de38d02c512c987f0/transformed/jetified-tracing-ktx-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/bf2859593199ff8de38d02c512c987f0/transformed/jetified-tracing-ktx-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /Users/larkbabao/.gradle/caches/8.10.2/transforms/3b98555939aa5eea06aa9fccf2cf9525/transformed/exifinterface-1.3.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] /Users/larkbabao/.gradle/caches/8.10.2/transforms/3b98555939aa5eea06aa9fccf2cf9525/transformed/exifinterface-1.3.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ff849810dfe34a0ab790c402787c149e/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ff849810dfe34a0ab790c402787c149e/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ccaaf8ba0ff17d4bbcf5fc9064ae7a64/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/ccaaf8ba0ff17d4bbcf5fc9064ae7a64/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/92a2169b5b2674c8bbe10e1b1d80da0f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/92a2169b5b2674c8bbe10e1b1d80da0f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e4e9d33e8be7718e1e9997a4b8a9b898/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e4e9d33e8be7718e1e9997a4b8a9b898/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.window.extensions.core:core:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/47506b70b93177473c53f4d5d7e77c91/transformed/jetified-core-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.window.extensions.core:core:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/47506b70b93177473c53f4d5d7e77c91/transformed/jetified-core-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/76a0dd850d9f18b6d5dce2588e83d61b/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/76a0dd850d9f18b6d5dce2588e83d61b/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e62025dd32ba7b1543d2002b823cb58b/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e62025dd32ba7b1543d2002b823cb58b/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/768c044a1b4db4aa31548ac9b4db55c8/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/768c044a1b4db4aa31548ac9b4db55c8/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/1d1d008dbdc103dccf010f958cec393c/transformed/jetified-core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/1d1d008dbdc103dccf010f958cec393c/transformed/jetified-core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9e1412f82216e9a99f9f845f4567c1f2/transformed/jetified-relinker-1.4.5/AndroidManifest.xml:5:5-43
+MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9e1412f82216e9a99f9f845f4567c1f2/transformed/jetified-relinker-1.4.5/AndroidManifest.xml:5:5-43
+	android:targetSdkVersion
+		INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml
+uses-feature#android.hardware.camera.any
+ADDED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-64
+	android:name
+		ADDED from [:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:19-61
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [androidx.media3:media3-exoplayer:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/34e8173ce89df20168a3523175f8024b/transformed/jetified-media3-exoplayer-1.5.1/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-common:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/f296a6abffc60adb15ebff81288a4a47/transformed/jetified-media3-common-1.5.1/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-common:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/f296a6abffc60adb15ebff81288a4a47/transformed/jetified-media3-common-1.5.1/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [androidx.media3:media3-exoplayer:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/34e8173ce89df20168a3523175f8024b/transformed/jetified-media3-exoplayer-1.5.1/AndroidManifest.xml:22:22-76
+service#androidx.camera.core.impl.MetadataHolderService
+ADDED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:24:9-33:19
+MERGED from [androidx.camera:camera-core:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/0df5cf7edba8bddcd280f8d9be1e4c56/transformed/jetified-camera-core-1.5.0-beta01/AndroidManifest.xml:29:9-33:78
+MERGED from [androidx.camera:camera-core:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/0df5cf7edba8bddcd280f8d9be1e4c56/transformed/jetified-camera-core-1.5.0-beta01/AndroidManifest.xml:29:9-33:78
+	tools:node
+		ADDED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:29:13-31
+	android:enabled
+		ADDED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:26:13-36
+	android:exported
+		ADDED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:28:13-75
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:25:13-75
+meta-data#androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER
+ADDED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:30:13-32:89
+	android:value
+		ADDED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:32:17-86
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:31:17-103
+service#com.baseflow.geolocator.GeolocatorLocationService
+ADDED from [:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:9-12:56
+	android:enabled
+		ADDED from [:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:13-35
+	android:exported
+		ADDED from [:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-37
+	android:foregroundServiceType
+		ADDED from [:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:13-53
+	android:name
+		ADDED from [:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:13-77
+provider#io.flutter.plugins.imagepicker.ImagePickerFileProvider
+ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:9-17:20
+	android:grantUriPermissions
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:13:13-47
+	android:authorities
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-74
+	android:exported
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:13-37
+	android:name
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:13-82
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:14:13-16:75
+	android:resource
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:16:17-72
+	android:name
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:17-67
+service#com.google.android.gms.metadata.ModuleDependencies
+ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:19:9-31:19
+	android:enabled
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:21:13-36
+	android:exported
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:22:13-37
+	tools:ignore
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:23:13-40
+	android:name
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:20:13-78
+intent-filter#action:name:com.google.android.gms.metadata.MODULE_DEPENDENCIES
+ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:24:13-26:29
+action#com.google.android.gms.metadata.MODULE_DEPENDENCIES
+ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:25:17-94
+	android:name
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:25:25-91
+meta-data#photopicker_activity:0:required
+ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:28:13-30:36
+	android:value
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:30:17-33
+	android:name
+		ADDED from [:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:29:17-63
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+	android:required
+		ADDED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:22:13-58
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e0d9d3675465ff69d847e2f781f20c61/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e0d9d3675465ff69d847e2f781f20c61/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
+permission#com.example.babao_flutter_application.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
+uses-permission#com.example.babao_flutter_application.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:50:25-92

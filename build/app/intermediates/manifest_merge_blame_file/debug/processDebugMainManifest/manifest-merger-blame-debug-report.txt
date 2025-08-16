@@ -1,0 +1,286 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.babao_flutter_application"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="35" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml:6:5-66
+15-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/debug/AndroidManifest.xml:6:22-64
+16    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+16-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:3:5-76
+16-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:3:22-73
+17    <uses-permission android:name="android.permission.CAMERA" />
+17-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:4:5-65
+17-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:4:22-62
+18    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+18-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:5:5-70
+18-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:5:22-68
+19    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+19-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:6:5-81
+19-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:6:22-78
+20    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- For Android 12 and below -->
+20-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:7:5-79
+20-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:7:22-76
+21    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+21-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:10:5-80
+21-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:10:22-77
+22    <uses-permission
+22-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:11:5-81
+23        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+23-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:11:22-78
+24        android:maxSdkVersion="28" />
+24-->[:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:13:9-35
+25    <!--
+26 Required to query activities that can process text, see:
+27         https://developer.android.com/training/package-visibility and
+28         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+29
+30         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+31    -->
+32    <queries>
+32-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:51:5-56:15
+33        <intent>
+33-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:52:9-55:18
+34            <action android:name="android.intent.action.PROCESS_TEXT" />
+34-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:53:13-72
+34-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:53:21-70
+35
+36            <data android:mimeType="text/plain" />
+36-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:54:13-50
+36-->/Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/android/app/src/main/AndroidManifest.xml:54:19-48
+37        </intent>
+38    </queries>
+39
+40    <uses-feature android:name="android.hardware.camera.any" />
+40-->[:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-64
+40-->[:camera_android_camerax] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/camera_android_camerax/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:19-61
+41
+42    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+42-->[androidx.media3:media3-exoplayer:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/34e8173ce89df20168a3523175f8024b/transformed/jetified-media3-exoplayer-1.5.1/AndroidManifest.xml:22:5-79
+42-->[androidx.media3:media3-exoplayer:1.5.1] /Users/larkbabao/.gradle/caches/8.10.2/transforms/34e8173ce89df20168a3523175f8024b/transformed/jetified-media3-exoplayer-1.5.1/AndroidManifest.xml:22:22-76
+43
+44    <permission
+44-->[androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:22:5-24:47
+45        android:name="com.example.babao_flutter_application.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+45-->[androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:23:9-81
+46        android:protectionLevel="signature" />
+46-->[androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:24:9-44
+47
+48    <uses-permission android:name="com.example.babao_flutter_application.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+48-->[androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:26:5-97
+48-->[androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:26:22-94
+49
+50    <application
+51        android:name="android.app.Application"
+52        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+52-->[androidx.core:core:1.16.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/6e9b87ddca682c26951d767f3a5f05e2/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
+53        android:debuggable="true"
+54        android:extractNativeLibs="true"
+55        android:icon="@mipmap/ic_launcher"
+56        android:label="Just A Sec" >
+57        <activity
+58            android:name="com.example.babao_flutter_application.MainActivity"
+59            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+60            android:exported="true"
+61            android:hardwareAccelerated="true"
+62            android:launchMode="singleTop"
+63            android:taskAffinity=""
+64            android:theme="@style/LaunchTheme"
+65            android:windowSoftInputMode="adjustResize" >
+66
+67            <!--
+68                 Specifies an Android theme to apply to this Activity as soon as
+69                 the Android process has started. This theme is visible to the user
+70                 while the Flutter UI initializes. After that, this theme continues
+71                 to determine the Window background behind the Flutter UI.
+72            -->
+73            <meta-data
+74                android:name="io.flutter.embedding.android.NormalTheme"
+75                android:resource="@style/NormalTheme" />
+76
+77            <intent-filter>
+78                <action android:name="android.intent.action.MAIN" />
+79
+80                <category android:name="android.intent.category.LAUNCHER" />
+81            </intent-filter>
+82        </activity>
+83        <!--
+84             Don't delete the meta-data below.
+85             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+86        -->
+87        <meta-data
+88            android:name="flutterEmbedding"
+89            android:value="2" />
+90
+91        <service
+91-->[androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:24:9-33:19
+92            android:name="androidx.camera.core.impl.MetadataHolderService"
+92-->[androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:25:13-75
+93            android:enabled="false"
+93-->[androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:26:13-36
+94            android:exported="false" >
+94-->[androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:27:13-37
+95            <meta-data
+95-->[androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:30:13-32:89
+96                android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER"
+96-->[androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:31:17-103
+97                android:value="androidx.camera.camera2.Camera2Config$DefaultProvider" />
+97-->[androidx.camera:camera-camera2:1.5.0-beta01] /Users/larkbabao/.gradle/caches/8.10.2/transforms/65f8a731866b2db1fdba6bbeea6a3bba/transformed/jetified-camera-camera2-1.5.0-beta01/AndroidManifest.xml:32:17-86
+98        </service>
+99        <service
+99-->[:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:9-12:56
+100            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+100-->[:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:13-77
+101            android:enabled="true"
+101-->[:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:13-35
+102            android:exported="false"
+102-->[:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-37
+103            android:foregroundServiceType="location" />
+103-->[:geolocator_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/geolocator_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:13-53
+104
+105        <provider
+105-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:9-17:20
+106            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+106-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:13-82
+107            android:authorities="com.example.babao_flutter_application.flutter.image_provider"
+107-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-74
+108            android:exported="false"
+108-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:13-37
+109            android:grantUriPermissions="true" >
+109-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:13:13-47
+110            <meta-data
+110-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:14:13-16:75
+111                android:name="android.support.FILE_PROVIDER_PATHS"
+111-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:17-67
+112                android:resource="@xml/flutter_image_picker_file_paths" />
+112-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:16:17-72
+113        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+114        <service
+114-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:19:9-31:19
+115            android:name="com.google.android.gms.metadata.ModuleDependencies"
+115-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:20:13-78
+116            android:enabled="false"
+116-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:21:13-36
+117            android:exported="false" >
+117-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:22:13-37
+118            <intent-filter>
+118-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:24:13-26:29
+119                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+119-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:25:17-94
+119-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:25:25-91
+120            </intent-filter>
+121
+122            <meta-data
+122-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:28:13-30:36
+123                android:name="photopicker_activity:0:required"
+123-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:29:17-63
+124                android:value="" />
+124-->[:image_picker_android] /Users/larkbabao/Desktop/flutter_refresher_activity/just_a_sec/build/image_picker_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:30:17-33
+125        </service>
+126
+127        <uses-library
+127-->[androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+128            android:name="androidx.window.extensions"
+128-->[androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+129            android:required="false" />
+129-->[androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+130        <uses-library
+130-->[androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+131            android:name="androidx.window.sidecar"
+131-->[androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+132            android:required="false" />
+132-->[androidx.window:window:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+133
+134        <activity
+134-->[com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:9-22:45
+135            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+135-->[com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:20:19-85
+136            android:exported="false"
+136-->[com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:22:19-43
+137            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+137-->[com.google.android.gms:play-services-base:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/9db9b81a577112600e8d2ee7b5450923/transformed/jetified-play-services-base-18.3.0/AndroidManifest.xml:21:19-78
+138
+139        <meta-data
+139-->[com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:21:9-23:69
+140            android:name="com.google.android.gms.version"
+140-->[com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:22:13-58
+141            android:value="@integer/google_play_services_version" />
+141-->[com.google.android.gms:play-services-basement:18.3.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/abeed4f47a72eff8f5b4e9bf7f2f3c91/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:23:13-66
+142
+143        <provider
+143-->[androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+144            android:name="androidx.startup.InitializationProvider"
+144-->[androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+145            android:authorities="com.example.babao_flutter_application.androidx-startup"
+145-->[androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+146            android:exported="false" >
+146-->[androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+147            <meta-data
+147-->[androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+148                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+148-->[androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+149                android:value="androidx.startup" />
+149-->[androidx.emoji2:emoji2:1.2.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/d221757f531c672c2df2db4ebaa2cbf1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+150            <meta-data
+150-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+151                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+151-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+152                android:value="androidx.startup" />
+152-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/e80aa748ff6540407d8dba61c0d945fe/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+153            <meta-data
+153-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+154                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+154-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+155                android:value="androidx.startup" />
+155-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+156        </provider>
+157
+158        <receiver
+158-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+159            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+159-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+160            android:directBootAware="false"
+160-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+161            android:enabled="true"
+161-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+162            android:exported="true"
+162-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+163            android:permission="android.permission.DUMP" >
+163-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+164            <intent-filter>
+164-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+165                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+165-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+165-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+166            </intent-filter>
+167            <intent-filter>
+167-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+168                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+168-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+168-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+169            </intent-filter>
+170            <intent-filter>
+170-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+171                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+171-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+171-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+172            </intent-filter>
+173            <intent-filter>
+173-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+174                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+174-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+174-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/larkbabao/.gradle/caches/8.10.2/transforms/4051a23600791cfac099a18cb55e807e/transformed/jetified-profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+175            </intent-filter>
+176        </receiver>
+177    </application>
+178
+179</manifest>
