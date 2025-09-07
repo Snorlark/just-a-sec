@@ -7,6 +7,11 @@ class CustomButtonWidget extends StatefulWidget {
   final bool goBack;
   final String text;
   final bool isTextButton;
+  final double? textButtonWidth;
+  final double? textButtonHeight;
+  final EdgeInsetsGeometry? textButtonMargin;
+  final Color? textButtonBorderColor;
+  final double textButtonBorderWidth;
 
   const CustomButtonWidget({
     super.key,
@@ -14,6 +19,11 @@ class CustomButtonWidget extends StatefulWidget {
     this.goBack = false,
     this.text = '',
     this.isTextButton = false,
+    this.textButtonWidth,
+    this.textButtonHeight,
+    this.textButtonMargin,
+    this.textButtonBorderColor,
+    this.textButtonBorderWidth = 0,
   });
 
   @override
@@ -44,6 +54,12 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
     final pressedScale = 0.92; // shrink on press
 
     if (widget.isTextButton && widget.text.isNotEmpty) {
+      final width = widget.textButtonWidth ?? double.infinity;
+      final height = widget.textButtonHeight ?? 56;
+      final margin = widget.textButtonMargin ?? const EdgeInsets.symmetric(horizontal: 20);
+      final borderColor = widget.textButtonBorderColor;
+      final borderWidth = widget.textButtonBorderWidth;
+
       return Transform.scale(
         scale: _isPressed ? pressedScale : 1.0,
         child: GestureDetector(
@@ -51,22 +67,24 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
           onTapUp: _handleTapUp,
           onTapCancel: _handleTapCancel,
           child: Container(
-            width: double.infinity,
-            height: 56,
-            margin: const EdgeInsets.symmetric(horizontal: 20),
+            width: width,
+            height: height,
+            margin: margin,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(28),
               color: Colors.white.withOpacity(_isPressed ? 0.6 : 0.8),
-              boxShadow:
-                  _isPressed
-                      ? []
-                      : [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
+              border: borderColor != null && borderWidth > 0
+                  ? Border.all(color: borderColor, width: borderWidth)
+                  : null,
+              boxShadow: _isPressed
+                  ? []
+                  : [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 8,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
             ),
             child: Center(
               child: Text(
@@ -84,8 +102,7 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
     }
 
     // Icon button
-    final navBarHeight =
-        70.0 + (bottomPadding > 0 ? bottomPadding : AppSpacing.margin);
+    final navBarHeight = 70.0 + (bottomPadding > 0 ? bottomPadding : AppSpacing.margin);
     final iconSize = screenWidth > 400 ? 32.0 : 30.0;
     final circleSize = screenWidth > 400 ? 60.0 : 55.0;
 
@@ -112,16 +129,15 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
                 color: Colors.white.withOpacity(_isPressed ? 0.2 : 0.3),
                 width: 1,
               ),
-              boxShadow:
-                  _isPressed
-                      ? []
-                      : [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          blurRadius: 6,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
+              boxShadow: _isPressed
+                  ? []
+                  : [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 6,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
             ),
             child: Icon(
               widget.goBack ? Icons.keyboard_arrow_left : Icons.arrow_forward,

@@ -1,21 +1,40 @@
 import '../config/constants.dart';
 import 'dart:convert';
-// import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 
 class ArticleService {
   List listData = [];
 
   Future<List> getAllArticle() async {
-    // http.Response response = await http.get(Uri.parse('$host/posts'));
-    Response response = await get(Uri.parse('$host/posts'));
+    try {
+      final uri = Uri.parse('$host/posts');
+      final response = await get(uri).timeout(const Duration(seconds: 8));
+      if (response.statusCode == 200) {
+        final List<dynamic> data = jsonDecode(response.body);
 
-    if (response.statusCode == 200) {
-      listData = jsonDecode(response.body);
+        // ID → image mapping (extend as needed)
+        final Map<int, String> idToImage = {
+          1: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=80',
+          2: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
+          3: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80',
+          4: 'https://images.unsplash.com/photo-1520975916090-3105956dac38?w=800&q=80',
+          5: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80',
+          6: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+        };
 
-      return listData;
-    } else {
-      throw Exception('Failed to load data');
+        listData = data.map((e) {
+          final m = Map<String, dynamic>.from(e as Map);
+          final id = (m['id'] as num?)?.toInt() ?? 0;
+          m['image'] = idToImage[id] ?? 'https://picsum.photos/seed/$id/800/600';
+          return m;
+        }).toList();
+
+        return listData;
+      } else {
+        return [];
+      }
+    } catch (_) {
+      return [];
     }
   }
 }

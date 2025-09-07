@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomText extends StatelessWidget {
   const CustomText({
     super.key,
     required this.text,
     this.fontSize = 12,
-    this.fontFamily = 'Poppins',
     this.fontWeight = FontWeight.normal,
     this.textAlign = TextAlign.left,
     this.letterSpacing = 0,
@@ -21,7 +21,6 @@ class CustomText extends StatelessWidget {
   final TextOverflow? overflow;
   final FontWeight fontWeight;
   final TextAlign textAlign;
-  final String fontFamily;
   final FontStyle fontStyle;
   final Color? color;
 
@@ -32,13 +31,14 @@ class CustomText extends StatelessWidget {
       maxLines: maxLines,
       overflow: overflow,
       textAlign: textAlign,
-      style: TextStyle(
-        fontFamily: fontFamily,
-        fontSize: fontSize,
-        fontWeight: fontWeight,
-        fontStyle: fontStyle,
-        letterSpacing: letterSpacing,
-        color: color,
+      style: GoogleFonts.cormorantGaramond(
+        textStyle: TextStyle(
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          fontStyle: fontStyle,
+          letterSpacing: letterSpacing,
+          color: color ?? Theme.of(context).textTheme.bodyMedium?.color,
+        ),
       ),
     );
   }

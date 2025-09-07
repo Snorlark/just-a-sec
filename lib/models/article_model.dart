@@ -3,12 +3,14 @@ class Article {
   final int id;
   final String title;
   final String body;
+  final String? image;
 
   Article({
     required this.userId,
     required this.id,
     required this.title,
     required this.body,
+    this.image,
   });
 
   factory Article.fromJson(Map<String, dynamic> json) {
@@ -17,6 +19,7 @@ class Article {
       id: json['id'],
       title: json['title'],
       body: json['body'],
+      image: json['image'] as String?,
     );
   }
 }

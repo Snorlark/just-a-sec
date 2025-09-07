@@ -502,6 +502,7 @@ class _VideoPostingScreenState extends State<VideoPostingScreen>
               const SizedBox(height: 8),
               TextField(
                 controller: _titleController,
+                style: TextStyle(color: PRIMARY),
                 decoration: InputDecoration(
                   hintText: 'Enter story title...',
                   border: OutlineInputBorder(
@@ -532,6 +533,7 @@ class _VideoPostingScreenState extends State<VideoPostingScreen>
               Expanded(
                 child: TextField(
                   controller: _contentController,
+                  style: TextStyle(color: PRIMARY),
                   decoration: InputDecoration(
                     hintText: 'Write your story caption...',
                     border: OutlineInputBorder(

@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
-import '../widgets/responsive_container_widget.dart';
 
 import '../models/article_model.dart';
 import '../services/article_service.dart';
 import '../custom/custom_text.dart';
 import '../providers/theme_provider.dart';
+import '../config/constants.dart';
+import '../custom/custom_button_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -79,7 +80,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final fieldBorder = isDark ? Colors.white24 : Colors.black26;
     final fieldHint = isDark ? Colors.white70 : Colors.black45;
 
-    return SafeArea(
+    return Scaffold( 
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.white),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            if (Navigator.of(context).canPop()) {
+              Navigator.of(context).pop();
+            } else {
+              Navigator.of(context).pushReplacementNamed('/main');
+            }
+          },
+        ),
+        title: const CustomText(
+          text: 'Articles',
+          fontSize: 24,
+          fontWeight: FontWeight.w700,
+          color: Colors.white,
+        ),
+      ),
+    
+    body: SafeArea(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -88,32 +112,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 6.h),
             child: Row(
               children: [
-                Expanded(
-                  child: CustomText(
-                    text:'Articles',
-                    fontSize: 26.sp,
-                    fontWeight: FontWeight.w700,
-                    color: textSecondary,
-                    // textAlign: TextAlign.left,
-                    // size: 26.sp,
-                    // style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    // color: Colors.white.withOpacity(0.8),
-                    
-                  ),
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.wb_sunny_outlined, color: textSecondary),
-                    Switch(
-                      value: themeProvider.isDark,
-                      onChanged: (val) {
-                        context.read<ThemeProvider>().setDark(val);
-                        _persistTheme(val);
-                      },
-                    ),
-                    Icon(Icons.nightlight_round, color: textSecondary),
-                  ],
-                ),
+                // Expanded(
+                //   child: CustomText(
+                //     text: 'Articles',
+                //     fontSize: 26.sp,
+                //     fontWeight: FontWeight.w700,
+                //     color: Colors.white,
+                //   ),
+                // ),
+                // Row(
+                //   children: const [],
+                // ),
+                // Switch(
+                //   value: themeProvider.isDark,
+                //   onChanged: (val) {
+                //     context.read<ThemeProvider>().setDark(val);
+                //     _persistTheme(val);
+                //   },
+                // ),
+                // const Icon(Icons.nightlight_round, color: Colors.white),
               ],
             ),
           ),
@@ -123,10 +140,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: TextField(
               controller: _searchController,
-              style: TextStyle(color: textPrimary, fontSize: 16.sp),
+              style: TextStyle(color: Colors.white, fontSize: 16.sp),
               decoration: InputDecoration(
                 hintText: 'Search articles...',
-                hintStyle: TextStyle(color: fieldHint, fontSize: 16.sp),
+                hintStyle: TextStyle(color: Colors.white.withOpacity(0.4), fontSize: 16.sp),
                 prefixIcon: Icon(Icons.search, color: fieldHint),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12.r),
@@ -142,6 +159,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           SizedBox(height: 10.h),
+
+          // Articles section title using splash typography (kept white)
+          // Padding(
+          //   padding: EdgeInsets.symmetric(horizontal: 20.w),
+          //   child: Text(
+          //     'Articles',
+          //     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+          //           color: Colors.white,
+          //           fontWeight: FontWeight.w700,
+          //         ),
+          //   ),
+          // ),
+          // SizedBox(height: 8.h),
 
           // List
           Expanded(
@@ -221,15 +251,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              // Placeholder for thumbnail/illustration
+                              // Image placeholder with PRIMARY border
                               Container(
                                 width: 100.w,
                                 height: 100.h,
                                 decoration: BoxDecoration(
-                                  color: Colors.blue.withOpacity(0.15),
+                                  color: Colors.white,
                                   borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(color: PRIMARY, width: 2),
+                                  image: (article.image != null && article.image!.isNotEmpty)
+                                      ? DecorationImage(
+                                          image: NetworkImage(article.image!),
+                                          fit: BoxFit.cover,
+                                        )
+                                      : null,
                                 ),
-                                child: Icon(Icons.image, color: Colors.blueAccent, size: 28.sp),
+                                child: (article.image != null && article.image!.isNotEmpty)
+                                    ? null
+                                    : Icon(Icons.image, color: Colors.blueAccent, size: 28.sp),
                               ),
                               SizedBox(width: 10.w),
                               Expanded(
@@ -249,6 +288,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       text: article.body,
                                       fontSize: 13.sp,
                                       color: textSecondary,
+                                      fontWeight: FontWeight.w800,
                                       maxLines: 3,
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -267,6 +307,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ],
       ),
+    ),
     );
   }
 }
@@ -278,55 +319,87 @@ class _ArticleDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final textPrimary = isDark ? Colors.white : Colors.black87;
-    final textSecondary = isDark ? Colors.white70 : Colors.black54;
-
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
-            // Illustration header like reference screenshot
+            // Illustration header with white background
             Container(
               height: 260.h,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.blue.shade100,
+                color: Colors.white,
+                image: (article.image != null && article.image!.isNotEmpty)
+                    ? DecorationImage(
+                        image: NetworkImage(article.image!),
+                        fit: BoxFit.cover,
+                      )
+                    : null,
               ),
-              child: Center(
-                child: Icon(
-                  Icons.travel_explore,
-                  size: 120.sp,
-                  color: Colors.blue.shade700,
-                ),
-              ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Center(
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text('Read All'),
+              child: (article.image != null && article.image!.isNotEmpty)
+                  ? null
+                  : Center(
+                      child: Container(
+                        width: 140.w,
+                        height: 140.w,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          border: Border.all(color: PRIMARY, width: 3),
+                        ),
+                        child: Icon(
+                          Icons.travel_explore,
+                          size: 80.sp,
+                          color: Colors.blue.shade700,
+                        ),
                       ),
                     ),
-                    SizedBox(height: 12.h),
-                    CustomText(
-                      text: article.title,
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w700,
-                      color: textPrimary,
-                    ),
-                    SizedBox(height: 8.h),
-                    CustomText(
-                      text: article.body,
-                      fontSize: 15.sp,
-                      color: textSecondary,
-                    ),
-                  ],
+            ),
+            // Content area with white background and brown text
+            Expanded(
+              child: Container(
+                color: Colors.white,
+                child: SingleChildScrollView(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: article.title,
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w700,
+                        color: PRIMARY,
+                      ),
+                      SizedBox(height: 8.h),
+                      CustomText(
+                        text: article.body,
+                        fontSize: 15.sp,
+                        color: PRIMARY.withOpacity(0.85),
+                        fontWeight: FontWeight.w500,
+                      ),
+                      SizedBox(height: 16.h),
+                      Center(
+                        child: CustomButtonWidget(
+                          onPressed: () {},
+                          text: 'Read All',
+                          isTextButton: true,
+                          textButtonWidth: 180,
+                          textButtonHeight: 44,
+                          textButtonMargin: const EdgeInsets.symmetric(horizontal: 0),
+                          textButtonBorderColor: PRIMARY,
+                          textButtonBorderWidth: 2,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
