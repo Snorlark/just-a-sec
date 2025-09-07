@@ -84,5 +84,3 @@ fastlane/screenshots/
 # Do NOT ignore for Flutter apps (keep lockfile in repo)
 #! pubspec.lock
 
-# Ignore build artifacts
-build/

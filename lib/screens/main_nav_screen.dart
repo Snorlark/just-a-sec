@@ -28,8 +28,7 @@ class _MainNavScreenState extends State<MainNavScreen> {
     return Scaffold(
       body: PageView(
         controller: _pageController,
-        physics:
-            const NeverScrollableScrollPhysics(), // optional: disable swipe
+        physics: const NeverScrollableScrollPhysics(),
         onPageChanged: (page) {
           setState(() => _currentIndex = page);
         },
@@ -39,8 +38,7 @@ class _MainNavScreenState extends State<MainNavScreen> {
             child: ResponsiveContainerWidget(
               child: _buildAnimatedPage(
                 HomeScreen(
-                  onGoBack:
-                      () => jumpToPage(1), // jump to gallery when caret pressed
+                  onGoBack: () => jumpToPage(1),
                 ),
                 key: const ValueKey('home'),
               ),
@@ -72,15 +70,10 @@ class _MainNavScreenState extends State<MainNavScreen> {
           ),
         ],
       ),
-
-      // Show nav bar only if not on home screen
-      bottomNavigationBar:
-          _currentIndex == 0
-              ? null
-              : CustomRoundedNavBar(
-                currentIndex: _currentIndex,
-                onTap: (value) => jumpToPage(value),
-              ),
+      bottomNavigationBar: CustomRoundedNavBar(
+        currentIndex: _currentIndex,
+        onTap: (value) => jumpToPage(value),
+      ),
     );
   }
 }

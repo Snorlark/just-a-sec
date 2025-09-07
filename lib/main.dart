@@ -41,8 +41,10 @@ Future<void> main() async {
   // ✅ Open boxes
   await Hive.openBox<UserModel>('userBox');
   await Hive.openBox<StoryModel>('storyBox');
+  final settingsBox = await Hive.openBox('settingsBox');
+  final initialDark = settingsBox.get('darkMode') == true;
 
-  runApp(const JustASecApp());
+  runApp(JustASecApp(initialDark: initialDark));
 
   // ❌ Removed `runApp(const JustASecApp());`
   // Reason: You already have `MainApp` defined with providers & theme handling.
