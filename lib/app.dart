@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'config/theme.dart';
 import 'screens/main_nav_screen.dart';
@@ -10,16 +11,21 @@ class JustASecApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Just A Sec',
-      debugShowCheckedModeBanner: false,
-      theme: appTheme,
-      initialRoute: '/splash',
-      routes: {
-        '/splash': (_) => const SplashScreen(),
-        '/register': (_) => const RegisterScreen(),
-        '/main': (_) => const MainNavScreen(),
-      },
+    return ScreenUtilInit(
+      designSize: const Size(412, 715),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: MaterialApp(
+        title: 'Just A Sec',
+        debugShowCheckedModeBanner: false,
+        theme: appTheme,
+        initialRoute: '/splash',
+        routes: {
+          '/splash': (_) => const SplashScreen(),
+          '/register': (_) => const RegisterScreen(),
+          '/main': (_) => const MainNavScreen(),
+        },
+      ),
     );
   }
 }
