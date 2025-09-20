@@ -10,6 +10,8 @@ import '../custom/custom_text.dart';
 import '../providers/theme_provider.dart';
 import '../config/constants.dart';
 import '../custom/custom_button_widget.dart';
+import '../widgets/article_dialog.dart';
+import '../screens/detail_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -50,7 +52,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           _filteredArticles = _allArticles
               .where((a) =>
                   a.title.toLowerCase().contains(query) ||
-                  a.body.toLowerCase().contains(query))
+                  a.name.toLowerCase().contains(query) ||
+                  a.content.any((c) => c.toLowerCase().contains(query)))
               .toList();
         }
       });
@@ -68,6 +71,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Future<void> _persistTheme(bool isDark) async {
     final box = await Hive.openBox('settingsBox');
     await box.put('darkMode', isDark);
+  }
+
+  Future<void> _openAddArticleDialog() async {
+    await showDialog<void>(
+      context: context,
+      builder: (ctx) => ArticleDialog(
+        onSave: (payload) async {
+          try {
+            final response = await ArticleService().createArticle(payload);
+            final created = (response['article'] ?? response);
+            final newArticle = Article.fromJson(created);
+            
+            setState(() {
+              _allArticles.insert(0, newArticle);
+              _filteredArticles = _allArticles;
+            });
+            
+            if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Article added.')),
+              );
+            }
+          } catch (e) {
+            rethrow;
+          }
+        },
+      ),
+    );
   }
 
   @override
@@ -239,7 +270,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         onTap: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (_) => _ArticleDetailPage(article: article),
+                              builder: (_) => DetailScreen(article: article),
                             ),
                           );
                         },
@@ -259,39 +290,53 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(12.r),
                                   border: Border.all(color: PRIMARY, width: 2),
-                                  image: (article.image != null && article.image!.isNotEmpty)
-                                      ? DecorationImage(
-                                          image: NetworkImage(article.image!),
-                                          fit: BoxFit.cover,
-                                        )
-                                      : null,
                                 ),
-                                child: (article.image != null && article.image!.isNotEmpty)
-                                    ? null
-                                    : Icon(Icons.image, color: Colors.blueAccent, size: 28.sp),
+                                child: Icon(Icons.article, color: Colors.blueAccent, size: 28.sp),
                               ),
                               SizedBox(width: 10.w),
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    CustomText(
-                                      text: article.title,
-                                      fontSize: 20.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: textPrimary,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Expanded(
+                                          child: CustomText(
+                                            text: article.title,
+                                            fontSize: 20.sp,
+                                            fontWeight: FontWeight.w700,
+                                            color: textPrimary,
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+                                        Chip(
+                                          label: Text(article.isActive ? 'Active' : 'Inactive'),
+                                          visualDensity: VisualDensity.compact,
+                                          side: BorderSide(
+                                            color: article.isActive ? Colors.green : Colors.grey,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                     SizedBox(height: 6.h),
                                     CustomText(
-                                      text: article.body,
+                                      text: article.name,
                                       fontSize: 13.sp,
                                       color: textSecondary,
-                                      fontWeight: FontWeight.w800,
-                                      maxLines: 3,
-                                      overflow: TextOverflow.ellipsis,
+                                      fontWeight: FontWeight.w600,
                                     ),
+                                    if (article.content.isNotEmpty) ...[
+                                      SizedBox(height: 4.h),
+                                      CustomText(
+                                        text: article.content.first,
+                                        fontSize: 12.sp,
+                                        color: textSecondary,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ],
                                   ],
                                 ),
                               ),
@@ -308,104 +353,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ],
       ),
     ),
-    );
-  }
-}
-
-class _ArticleDetailPage extends StatelessWidget {
-  const _ArticleDetailPage({required this.article});
-
-  final Article article;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-      ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            // Illustration header with white background
-            Container(
-              height: 260.h,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                image: (article.image != null && article.image!.isNotEmpty)
-                    ? DecorationImage(
-                        image: NetworkImage(article.image!),
-                        fit: BoxFit.cover,
-                      )
-                    : null,
-              ),
-              child: (article.image != null && article.image!.isNotEmpty)
-                  ? null
-                  : Center(
-                      child: Container(
-                        width: 140.w,
-                        height: 140.w,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                          border: Border.all(color: PRIMARY, width: 3),
-                        ),
-                        child: Icon(
-                          Icons.travel_explore,
-                          size: 80.sp,
-                          color: Colors.blue.shade700,
-                        ),
-                      ),
-                    ),
-            ),
-            // Content area with white background and brown text
-            Expanded(
-              child: Container(
-                color: Colors.white,
-                child: SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                        text: article.title,
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w700,
-                        color: PRIMARY,
-                      ),
-                      SizedBox(height: 8.h),
-                      CustomText(
-                        text: article.body,
-                        fontSize: 15.sp,
-                        color: PRIMARY.withOpacity(0.85),
-                        fontWeight: FontWeight.w500,
-                      ),
-                      SizedBox(height: 16.h),
-                      Center(
-                        child: CustomButtonWidget(
-                          onPressed: () {},
-                          text: 'Read All',
-                          isTextButton: true,
-                          textButtonWidth: 180,
-                          textButtonHeight: 44,
-                          textButtonMargin: const EdgeInsets.symmetric(horizontal: 0),
-                          textButtonBorderColor: PRIMARY,
-                          textButtonBorderWidth: 2,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+    floatingActionButton: FloatingActionButton.extended(
+      onPressed: _openAddArticleDialog,
+      icon: const Icon(Icons.add),
+      label: const Text('Add'),
+    ),
     );
   }
 }

@@ -12,6 +12,8 @@ class CustomButtonWidget extends StatefulWidget {
   final EdgeInsetsGeometry? textButtonMargin;
   final Color? textButtonBorderColor;
   final double textButtonBorderWidth;
+  final Color? textButtonColor; 
+
 
   const CustomButtonWidget({
     super.key,
@@ -24,6 +26,7 @@ class CustomButtonWidget extends StatefulWidget {
     this.textButtonMargin,
     this.textButtonBorderColor,
     this.textButtonBorderWidth = 0,
+    this.textButtonColor,
   });
 
   @override
@@ -87,14 +90,23 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
                     ],
             ),
             child: Center(
+              // child: Text(
+              //   widget.text,
+              //   style: TextStyle(
+              //     fontSize: 18,
+              //     fontWeight: FontWeight.bold,
+              //     color: PRIMARY.withOpacity(_isPressed ? 0.7 : 1.0),
+              //   ),
+              // ),
               child: Text(
                 widget.text,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: PRIMARY.withOpacity(_isPressed ? 0.7 : 1.0),
+                  color: (widget.textButtonColor ?? PRIMARY).withOpacity(_isPressed ? 0.7 : 1.0),
                 ),
               ),
+
             ),
           ),
         ),

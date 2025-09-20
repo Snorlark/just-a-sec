@@ -1,9 +1,51 @@
 import '../config/constants.dart';
 import 'dart:convert';
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
+import '../models/article_model.dart';
 
 class ArticleService {
   List listData = [];
+
+  // Add to the article_service.dart
+    Future<Map> createArticle(dynamic article) async {
+      final response = await post(
+        Uri.parse('host/api/articles'),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: jsonEncode(article),
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        mapData = jsonDecode(response.body);
+        return mapData;
+      } else {
+        throw Exception('Failed to create article: ${response.statusCode} ${response.body}');
+      }
+    }
+
+    Future<Map> updateArticle(String id, dynamic article) async {
+      final response = await put(
+        Uri.parse('host/api/articles/$id'),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: jsonEncode(article),
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        mapData = jsonDecode(response.body);
+        return mapData;
+      } else {
+        throw Exception('Failed to update article: ${response.statusCode} ${response.body}');
+      }
+    }
+
+
+
+
 
   Future<List> getAllArticle() async {
     try {
