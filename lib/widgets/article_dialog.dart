@@ -7,11 +7,7 @@ class ArticleDialog extends StatefulWidget {
   final Article? article; // null for add, non-null for edit
   final Function(Map<String, dynamic>) onSave;
 
-  const ArticleDialog({
-    super.key,
-    this.article,
-    required this.onSave,
-  });
+  const ArticleDialog({super.key, this.article, required this.onSave});
 
   @override
   State<ArticleDialog> createState() => _ArticleDialogState();
@@ -29,7 +25,6 @@ class _ArticleDialogState extends State<ArticleDialog> {
   void initState() {
     super.initState();
     _titleController = TextEditingController(text: widget.article?.title ?? '');
-    _authorController = TextEditingController(text: widget.article?.name ?? '');
     _contentController = TextEditingController(
       text: widget.article?.content.join('\n') ?? '',
     );
@@ -69,16 +64,16 @@ class _ArticleDialogState extends State<ArticleDialog> {
       };
 
       await widget.onSave(payload);
-      
+
       if (mounted) {
         Navigator.of(context).pop();
       }
     } catch (e) {
       setState(() => _isSaving = false);
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Failed to save: $e')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Failed to save: $e')));
       }
     }
   }
@@ -145,18 +140,19 @@ class _ArticleDialogState extends State<ArticleDialog> {
         ),
         ElevatedButton.icon(
           onPressed: _isSaving ? null : _save,
-          icon: _isSaving
-              ? SizedBox(
-                  width: 16.w,
-                  height: 16.h,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      Theme.of(context).colorScheme.onPrimary,
+          icon:
+              _isSaving
+                  ? SizedBox(
+                    width: 16.w,
+                    height: 16.h,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        Theme.of(context).colorScheme.onPrimary,
+                      ),
                     ),
-                  ),
-                )
-              : const Icon(Icons.save),
+                  )
+                  : const Icon(Icons.save),
           label: Text(_isSaving ? 'Saving...' : 'Save'),
         ),
       ],

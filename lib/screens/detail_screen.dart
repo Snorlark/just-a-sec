@@ -19,7 +19,7 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   bool _isEditMode = false;
   bool _isSaving = false;
-  
+
   late TextEditingController _titleController;
   late TextEditingController _authorController;
   late TextEditingController _contentController;
@@ -30,8 +30,9 @@ class _DetailScreenState extends State<DetailScreen> {
   void initState() {
     super.initState();
     _titleController = TextEditingController(text: widget.article.title);
-    _authorController = TextEditingController(text: widget.article.name);
-    _contentController = TextEditingController(text: widget.article.content.join('\n'));
+    _contentController = TextEditingController(
+      text: widget.article.content.join('\n'),
+    );
     _isActive = widget.article.isActive;
     _formKey = GlobalKey<FormState>();
   }
@@ -67,9 +68,9 @@ class _DetailScreenState extends State<DetailScreen> {
       };
 
       await ArticleService().updateArticle(widget.article.aid, payload);
-      
+
       setState(() => _isEditMode = false);
-      
+
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Article updated successfully.')),
@@ -77,9 +78,9 @@ class _DetailScreenState extends State<DetailScreen> {
       }
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Failed to update: $e')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Failed to update: $e')));
       }
     } finally {
       setState(() => _isSaving = false);
@@ -90,7 +91,6 @@ class _DetailScreenState extends State<DetailScreen> {
     setState(() {
       _isEditMode = false;
       _titleController.text = widget.article.title;
-      _authorController.text = widget.article.name;
       _contentController.text = widget.article.content.join('\n');
       _isActive = widget.article.isActive;
     });
@@ -168,8 +168,12 @@ class _DetailScreenState extends State<DetailScreen> {
                   child: Container(
                     color: Colors.white,
                     child: SingleChildScrollView(
-                      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-                      child: _isEditMode ? _buildEditForm() : _buildViewContent(),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20.w,
+                        vertical: 16.h,
+                      ),
+                      child:
+                          _isEditMode ? _buildEditForm() : _buildViewContent(),
                     ),
                   ),
                 ),
@@ -219,38 +223,42 @@ class _DetailScreenState extends State<DetailScreen> {
         ),
         SizedBox(height: 8.h),
         CustomText(
-          text: widget.article.name,
+          text: widget.article.title,
           fontSize: 15.sp,
           color: PRIMARY.withOpacity(0.85),
           fontWeight: FontWeight.w500,
         ),
         SizedBox(height: 16.h),
         // Content list
-        ...widget.article.content.map((item) => Padding(
-          padding: EdgeInsets.only(bottom: 8.h),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 6.w,
-                height: 6.w,
-                margin: EdgeInsets.only(top: 8.h, right: 12.w),
-                decoration: BoxDecoration(
-                  color: PRIMARY,
-                  shape: BoxShape.circle,
+        ...widget.article.content
+            .map(
+              (item) => Padding(
+                padding: EdgeInsets.only(bottom: 8.h),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 6.w,
+                      height: 6.w,
+                      margin: EdgeInsets.only(top: 8.h, right: 12.w),
+                      decoration: BoxDecoration(
+                        color: PRIMARY,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    Expanded(
+                      child: CustomText(
+                        text: item,
+                        fontSize: 15.sp,
+                        color: PRIMARY.withOpacity(0.85),
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Expanded(
-                child: CustomText(
-                  text: item,
-                  fontSize: 15.sp,
-                  color: PRIMARY.withOpacity(0.85),
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
-          ),
-        )).toList(),
+            )
+            .toList(),
         SizedBox(height: 16.h),
         Center(
           child: CustomButtonWidget(
@@ -358,7 +366,8 @@ class _DetailScreenState extends State<DetailScreen> {
           SizedBox(height: 16.h),
           Center(
             child: CustomText(
-              text: 'Tip: separate multiple content items using new lines or commas.',
+              text:
+                  'Tip: separate multiple content items using new lines or commas.',
               fontSize: 12.sp,
               color: Colors.grey[600],
               fontStyle: FontStyle.italic,

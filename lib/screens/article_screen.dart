@@ -48,12 +48,14 @@ class _ArticleScreenState extends State<ArticleScreen> {
       if (query.isEmpty) {
         _filteredArticles = _allArticles;
       } else {
-        _filteredArticles = _allArticles
-            .where((a) =>
-                a.title.toLowerCase().contains(query) ||
-                a.name.toLowerCase().contains(query) ||
-                a.content.any((c) => c.toLowerCase().contains(query)))
-            .toList();
+        _filteredArticles =
+            _allArticles
+                .where(
+                  (a) =>
+                      a.title.toLowerCase().contains(query) ||
+                      a.content.any((c) => c.toLowerCase().contains(query)),
+                )
+                .toList();
       }
     });
   }
@@ -74,28 +76,29 @@ class _ArticleScreenState extends State<ArticleScreen> {
   Future<void> _openAddArticleDialog() async {
     await showDialog<void>(
       context: context,
-      builder: (ctx) => ArticleDialog(
-        onSave: (payload) async {
-          try {
-            final response = await ArticleService().createArticle(payload);
-            final created = (response['article'] ?? response);
-            final newArticle = Article.fromJson(created);
-            
-            setState(() {
-              _allArticles.insert(0, newArticle);
-              _filterArticles();
-            });
-            
-            if (mounted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Article added.')),
-              );
-            }
-          } catch (e) {
-            rethrow;
-          }
-        },
-      ),
+      builder:
+          (ctx) => ArticleDialog(
+            onSave: (payload) async {
+              try {
+                final response = await ArticleService().createArticle(payload);
+                final created = (response['article'] ?? response);
+                final newArticle = Article.fromJson(created);
+
+                setState(() {
+                  _allArticles.insert(0, newArticle);
+                  _filterArticles();
+                });
+
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Article added.')),
+                  );
+                }
+              } catch (e) {
+                rethrow;
+              }
+            },
+          ),
     );
   }
 
@@ -178,7 +181,8 @@ class _ArticleScreenState extends State<ArticleScreen> {
                           CircularProgressIndicator.adaptive(strokeWidth: 3.sp),
                           SizedBox(height: 10.h),
                           const CustomText(
-                            text: 'Waiting for the equipment articles to display...',
+                            text:
+                                'Waiting for the equipment articles to display...',
                           ),
                         ],
                       ),
@@ -204,8 +208,9 @@ class _ArticleScreenState extends State<ArticleScreen> {
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     final article = _filteredArticles[index];
-                    final preview = article.content.isNotEmpty ? article.content.first : '';
-                    
+                    final preview =
+                        article.content.isNotEmpty ? article.content.first : '';
+
                     return Card(
                       elevation: 1,
                       child: InkWell(
@@ -234,11 +239,15 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Expanded(
                                           child: CustomText(
-                                            text: article.title.isEmpty ? 'Untitled' : article.title,
+                                            text:
+                                                article.title.isEmpty
+                                                    ? 'Untitled'
+                                                    : article.title,
                                             fontSize: 24.sp,
                                             fontWeight: FontWeight.bold,
                                             maxLines: 2,
@@ -249,7 +258,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                     ),
                                     SizedBox(height: 4.h),
                                     CustomText(
-                                      text: article.name,
+                                      text: article.title,
                                       fontSize: 13.sp,
                                     ),
                                     if (preview.isNotEmpty) ...[

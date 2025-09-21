@@ -7,50 +7,50 @@ class ArticleService {
   List listData = [];
 
   // Add to the article_service.dart
-    Future<Map> createArticle(dynamic article) async {
-      final response = await post(
-        Uri.parse('host/api/articles'),
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: jsonEncode(article),
+  Future<Map> createArticle(dynamic article) async {
+    final response = await http.post(
+      Uri.parse('host/api/articles'),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: jsonEncode(article),
+    );
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      final data = jsonDecode(response.body);
+      return data;
+    } else {
+      throw Exception(
+        'Failed to create article: ${response.statusCode} ${response.body}',
       );
-
-      if (response.statusCode == 200 || response.statusCode == 201) {
-        mapData = jsonDecode(response.body);
-        return mapData;
-      } else {
-        throw Exception('Failed to create article: ${response.statusCode} ${response.body}');
-      }
     }
+  }
 
-    Future<Map> updateArticle(String id, dynamic article) async {
-      final response = await put(
-        Uri.parse('host/api/articles/$id'),
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: jsonEncode(article),
+  Future<Map> updateArticle(String id, dynamic article) async {
+    final response = await http.put(
+      Uri.parse('host/api/articles/$id'),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: jsonEncode(article),
+    );
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      final data = jsonDecode(response.body);
+      return data;
+    } else {
+      throw Exception(
+        'Failed to update article: ${response.statusCode} ${response.body}',
       );
-
-      if (response.statusCode == 200 || response.statusCode == 201) {
-        mapData = jsonDecode(response.body);
-        return mapData;
-      } else {
-        throw Exception('Failed to update article: ${response.statusCode} ${response.body}');
-      }
     }
-
-
-
-
+  }
 
   Future<List> getAllArticle() async {
     try {
       final uri = Uri.parse('$host/posts');
-      final response = await get(uri).timeout(const Duration(seconds: 8));
+      final response = await http.get(uri).timeout(const Duration(seconds: 8));
       if (response.statusCode == 200) {
         final List<dynamic> data = jsonDecode(response.body);
 
@@ -64,12 +64,14 @@ class ArticleService {
           6: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
         };
 
-        listData = data.map((e) {
-          final m = Map<String, dynamic>.from(e as Map);
-          final id = (m['id'] as num?)?.toInt() ?? 0;
-          m['image'] = idToImage[id] ?? 'https://picsum.photos/seed/$id/800/600';
-          return m;
-        }).toList();
+        listData =
+            data.map((e) {
+              final m = Map<String, dynamic>.from(e as Map);
+              final id = (m['id'] as num?)?.toInt() ?? 0;
+              m['image'] =
+                  idToImage[id] ?? 'https://picsum.photos/seed/$id/800/600';
+              return m;
+            }).toList();
 
         return listData;
       } else {

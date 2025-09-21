@@ -23,6 +23,7 @@
 //     );
 //   }
 // }
+
 class Article {
   final String aid;
   final String title;
@@ -37,16 +38,16 @@ class Article {
   });
 
   factory Article.fromJson(Map<String, dynamic> json) => Article(
-        aid: json['aid'],
-        title: json['title'],
-        content: List<String>.from(json['content'] ?? []),
-        isActive: json['isActive'] ?? true,
-      );
+    aid: json['aid'],
+    title: json['title'],
+    content: List<String>.from(json['content'] ?? []),
+    isActive: json['isActive'] ?? true,
+  );
 
   Map<String, dynamic> toJson() => {
-        'aid': aid,
-        'title': title,
-        'content': content,
-        'isActive': isActive,
-      };
+    'aid': aid,
+    'title': title,
+    'content': content,
+    'isActive': isActive,
+  };
 }
