@@ -63,8 +63,12 @@ class _ArticleScreenState extends State<ArticleScreen> {
 
   Future<void> _loadArticles() async {
     try {
-      final response = await ArticleService().getAllArticle();
-      final articles = response.map((e) => Article.fromJson(e)).toList();
+      // final response = await ArticleService().getAllArticle();
+      // final articles = response.map((e) => Article.fromJson(e)).toList();
+      final response = await ArticleService().fetchArticles();
+      final articles =
+          response.map<Article>((e) => Article.fromJson(e)).toList();
+
       setState(() {
         _allArticles = articles;
         _filteredArticles = articles;

@@ -64,7 +64,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Future<List<Article>> _getAllArticles() async {
-    final response = await ArticleService().getAllArticle();
+    // final response = await ArticleService().getAllArticle();
+    final response = await ArticleService().fetchArticles();
     final articles = (response).map((e) => Article.fromJson(e)).toList();
     _allArticles = articles;
     _filteredArticles = articles;
