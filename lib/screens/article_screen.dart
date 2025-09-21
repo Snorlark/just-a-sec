@@ -53,6 +53,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                 .where(
                   (a) =>
                       a.title.toLowerCase().contains(query) ||
+                      a.name.toLowerCase().contains(query) ||
                       a.content.any((c) => c.toLowerCase().contains(query)),
                 )
                 .toList();
@@ -258,7 +259,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                                     ),
                                     SizedBox(height: 4.h),
                                     CustomText(
-                                      text: article.title,
+                                      text: article.name,
                                       fontSize: 13.sp,
                                     ),
                                     if (preview.isNotEmpty) ...[

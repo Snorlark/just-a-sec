@@ -54,6 +54,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   .where(
                     (a) =>
                         a.title.toLowerCase().contains(query) ||
+                        a.name.toLowerCase().contains(query) ||
                         a.content.any((c) => c.toLowerCase().contains(query)),
                   )
                   .toList();
@@ -354,7 +355,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       ),
                                       SizedBox(height: 6.h),
                                       CustomText(
-                                        text: article.title,
+                                        text: article.name,
                                         fontSize: 13.sp,
                                         color: textSecondary,
                                         fontWeight: FontWeight.w600,

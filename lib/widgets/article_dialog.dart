@@ -25,6 +25,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
   void initState() {
     super.initState();
     _titleController = TextEditingController(text: widget.article?.title ?? '');
+    _authorController = TextEditingController(text: widget.article?.name ?? '');
     _contentController = TextEditingController(
       text: widget.article?.content.join('\n') ?? '',
     );
@@ -91,6 +92,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
               TextFormField(
                 controller: _titleController,
                 textInputAction: TextInputAction.next,
+                style: TextStyle(color: Colors.black87, fontSize: 15.sp),
                 decoration: const InputDecoration(
                   labelText: 'Title',
                   border: OutlineInputBorder(),
@@ -101,6 +103,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
               TextFormField(
                 controller: _authorController,
                 textInputAction: TextInputAction.next,
+                style: TextStyle(color: Colors.black87, fontSize: 15.sp),
                 decoration: const InputDecoration(
                   labelText: 'Author / Name',
                   border: OutlineInputBorder(),
@@ -110,6 +113,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
               SizedBox(height: 12.h),
               TextFormField(
                 controller: _contentController,
+                style: TextStyle(color: Colors.black87, fontSize: 15.sp),
                 minLines: 3,
                 maxLines: 6,
                 decoration: const InputDecoration(

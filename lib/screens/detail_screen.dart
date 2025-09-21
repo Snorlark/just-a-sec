@@ -30,6 +30,7 @@ class _DetailScreenState extends State<DetailScreen> {
   void initState() {
     super.initState();
     _titleController = TextEditingController(text: widget.article.title);
+    _authorController = TextEditingController(text: widget.article.name);
     _contentController = TextEditingController(
       text: widget.article.content.join('\n'),
     );
@@ -91,6 +92,7 @@ class _DetailScreenState extends State<DetailScreen> {
     setState(() {
       _isEditMode = false;
       _titleController.text = widget.article.title;
+      _authorController.text = widget.article.name;
       _contentController.text = widget.article.content.join('\n');
       _isActive = widget.article.isActive;
     });
@@ -223,7 +225,7 @@ class _DetailScreenState extends State<DetailScreen> {
         ),
         SizedBox(height: 8.h),
         CustomText(
-          text: widget.article.title,
+          text: widget.article.name,
           fontSize: 15.sp,
           color: PRIMARY.withOpacity(0.85),
           fontWeight: FontWeight.w500,

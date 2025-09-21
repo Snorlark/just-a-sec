@@ -27,18 +27,21 @@
 class Article {
   final String aid;
   final String title;
+  final String name;
   final List<String> content;
   final bool isActive;
 
   Article({
     required this.aid,
     required this.title,
+    required this.name,
     required this.content,
     required this.isActive,
   });
 
   factory Article.fromJson(Map<String, dynamic> json) => Article(
     aid: json['aid'],
+    name: json['name']?.toString() ?? '',
     title: json['title'],
     content: List<String>.from(json['content'] ?? []),
     isActive: json['isActive'] ?? true,
