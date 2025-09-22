@@ -6,6 +6,7 @@ import '../services/article_service.dart';
 import '../custom/custom_text.dart';
 import '../widgets/article_dialog.dart';
 import '../screens/detail_screen.dart';
+import '../config/constants.dart';
 
 class ArticleScreen extends StatefulWidget {
   const ArticleScreen({super.key});
@@ -63,13 +64,20 @@ class _ArticleScreenState extends State<ArticleScreen> {
 
   Future<void> _loadArticles() async {
     try {
+      print('Loading articles...');
       final response = await ArticleService().getAllArticle();
-      final articles = response.map((e) => Article.fromJson(e)).toList();
+      print('Raw response: $response');
+      final articles = response.map((e) {
+        print('Converting article: $e');
+        return Article.fromJson(e);
+      }).toList();
+      print('Converted articles: ${articles.length}');
       setState(() {
         _allArticles = articles;
         _filteredArticles = articles;
       });
     } catch (e) {
+      print('Error loading articles: $e');
       debugPrint('Error loading articles: $e');
     }
   }
@@ -81,9 +89,19 @@ class _ArticleScreenState extends State<ArticleScreen> {
           (ctx) => ArticleDialog(
             onSave: (payload) async {
               try {
+                print('Creating article with payload: $payload');
                 final response = await ArticleService().createArticle(payload);
+                print('Create article response: $response');
                 final created = (response['article'] ?? response);
+                print('Created article data: $created');
+                
+                // Add image to the created article if it doesn't have one
+                if (created['image'] == null || created['image'].toString().isEmpty) {
+                  created['image'] = 'https://picsum.photos/seed/${created['_id'] ?? created['aid']}/800/600';
+                }
+                
                 final newArticle = Article.fromJson(created);
+                print('New article object: $newArticle');
 
                 setState(() {
                   _allArticles.insert(0, newArticle);
@@ -96,6 +114,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                   );
                 }
               } catch (e) {
+                print('Error creating article: $e');
                 rethrow;
               }
             },
@@ -120,15 +139,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
           fontSize: 24,
           fontWeight: FontWeight.w700,
           color: Colors.white,
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings, color: Colors.white),
-            onPressed: () {
-              // Settings action
-            },
-          ),
-        ],
+        ),       
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white),
@@ -285,10 +296,61 @@ class _ArticleScreenState extends State<ArticleScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _openAddArticleDialog,
-        icon: const Icon(Icons.add),
-        label: const Text('Add'),
+      floatingActionButton: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [PRIMARY, PRIMARY.withOpacity(0.8)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(30.r),
+          boxShadow: [
+            BoxShadow(
+              color: PRIMARY.withOpacity(0.4),
+              blurRadius: 20,
+              offset: const Offset(0, 8),
+            ),
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(30.r),
+            onTap: _openAddArticleDialog,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(6.w),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: Icon(
+                      Icons.add_rounded,
+                      color: Colors.white,
+                      size: 20.sp,
+                    ),
+                  ),
+                  SizedBox(width: 12.w),
+                  CustomText(
+                    text: 'Add Article',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

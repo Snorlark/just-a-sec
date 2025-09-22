@@ -1,15 +1,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive/hive.dart';
-import 'package:provider/provider.dart';
 
 import '../models/article_model.dart';
 import '../services/article_service.dart';
 import '../custom/custom_text.dart';
-import '../providers/theme_provider.dart';
 import '../config/constants.dart';
-import '../custom/custom_button_widget.dart';
 import '../widgets/article_dialog.dart';
 import '../screens/detail_screen.dart';
 
@@ -71,10 +67,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return articles;
   }
 
-  Future<void> _persistTheme(bool isDark) async {
-    final box = await Hive.openBox('settingsBox');
-    await box.put('darkMode', isDark);
-  }
 
   Future<void> _openAddArticleDialog() async {
     await showDialog<void>(
@@ -85,6 +77,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               try {
                 final response = await ArticleService().createArticle(payload);
                 final created = (response['article'] ?? response);
+                
+                // Add image to the created article if it doesn't have one
+                if (created['image'] == null || created['image'].toString().isEmpty) {
+                  created['image'] = 'https://picsum.photos/seed/${created['_id'] ?? created['aid']}/800/600';
+                }
+                
                 final newArticle = Article.fromJson(created);
 
                 setState(() {
@@ -107,7 +105,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider = context.watch<ThemeProvider>();
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final textPrimary = isDark ? Colors.white : Colors.black87;
     final textSecondary = isDark ? Colors.white70 : Colors.black54;
@@ -120,18 +117,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.white),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            if (Navigator.of(context).canPop()) {
-              Navigator.of(context).pop();
-            } else {
-              Navigator.of(context).pushReplacementNamed('/main');
-            }
-          },
-        ),
-        title: const CustomText(
+        iconTheme: const IconThemeData(color: Colors.white),       
+        title: CustomText(
           text: 'Articles',
           fontSize: 24,
           fontWeight: FontWeight.w700,
@@ -143,33 +130,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header with theme toggle
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 10.h, 20.w, 6.h),
-              child: Row(
-                children: [
-                  // Expanded(
-                  //   child: CustomText(
-                  //     text: 'Articles',
-                  //     fontSize: 26.sp,
-                  //     fontWeight: FontWeight.w700,
-                  //     color: Colors.white,
-                  //   ),
-                  // ),
-                  // Row(
-                  //   children: const [],
-                  // ),
-                  // Switch(
-                  //   value: themeProvider.isDark,
-                  //   onChanged: (val) {
-                  //     context.read<ThemeProvider>().setDark(val);
-                  //     _persistTheme(val);
-                  //   },
-                  // ),
-                  // const Icon(Icons.nightlight_round, color: Colors.white),
-                ],
-              ),
-            ),
 
             // Search bar
             Padding(
@@ -201,19 +161,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             SizedBox(height: 10.h),
-
-            // Articles section title using splash typography (kept white)
-            // Padding(
-            //   padding: EdgeInsets.symmetric(horizontal: 20.w),
-            //   child: Text(
-            //     'Articles',
-            //     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            //           color: Colors.white,
-            //           fontWeight: FontWeight.w700,
-            //         ),
-            //   ),
-            // ),
-            // SizedBox(height: 8.h),
 
             // List
             Expanded(
@@ -298,22 +245,57 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                // Image placeholder with PRIMARY border
+                                // Article image with PRIMARY border
                                 Container(
                                   width: 100.w,
                                   height: 100.h,
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
                                     borderRadius: BorderRadius.circular(12.r),
                                     border: Border.all(
                                       color: PRIMARY,
                                       width: 2,
                                     ),
                                   ),
-                                  child: Icon(
-                                    Icons.article,
-                                    color: Colors.blueAccent,
-                                    size: 28.sp,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10.r),
+                                    child: article.image.isNotEmpty
+                                        ? Image.network(
+                                            article.image,
+                                            fit: BoxFit.cover,
+                                            errorBuilder: (context, error, stackTrace) {
+                                              return Container(
+                                                color: Colors.grey[200],
+                                                child: Icon(
+                                                  Icons.article,
+                                                  color: Colors.blueAccent,
+                                                  size: 28.sp,
+                                                ),
+                                              );
+                                            },
+                                            loadingBuilder: (context, child, loadingProgress) {
+                                              if (loadingProgress == null) return child;
+                                              return Container(
+                                                color: Colors.grey[200],
+                                                child: Center(
+                                                  child: CircularProgressIndicator(
+                                                    strokeWidth: 2,
+                                                    value: loadingProgress.expectedTotalBytes != null
+                                                        ? loadingProgress.cumulativeBytesLoaded /
+                                                            loadingProgress.expectedTotalBytes!
+                                                        : null,
+                                                  ),
+                                                ),
+                                              );
+                                            },
+                                          )
+                                        : Container(
+                                            color: Colors.grey[200],
+                                            child: Icon(
+                                              Icons.article,
+                                              color: Colors.blueAccent,
+                                              size: 28.sp,
+                                            ),
+                                          ),
                                   ),
                                 ),
                                 SizedBox(width: 10.w),
@@ -388,8 +370,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _openAddArticleDialog,
-        icon: const Icon(Icons.add),
-        label: const Text('Add'),
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.r),
+        ),
+        icon: const Icon(Icons.add, color: PRIMARY),
+        label: const Text('Add', style: TextStyle(color: PRIMARY)),
       ),
     );
   }

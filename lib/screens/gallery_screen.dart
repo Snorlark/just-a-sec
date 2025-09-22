@@ -453,7 +453,7 @@ class _GalleryScreenState extends State<GalleryScreen>
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
-                    Icons.menu,
+                    Icons.person,
                     color: Colors.white,
                     size: 24,
                   ),

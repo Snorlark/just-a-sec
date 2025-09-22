@@ -9,7 +9,7 @@ class ArticleService {
   // Add to the article_service.dart
   Future<Map> createArticle(dynamic article) async {
     final response = await http.post(
-      Uri.parse('host/api/articles'),
+      Uri.parse('$host/api/articles'),
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -29,7 +29,7 @@ class ArticleService {
 
   Future<Map> updateArticle(String id, dynamic article) async {
     final response = await http.put(
-      Uri.parse('host/api/articles/$id'),
+      Uri.parse('$host/api/articles/$id'),
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
@@ -49,10 +49,16 @@ class ArticleService {
 
   Future<List> getAllArticle() async {
     try {
-      final uri = Uri.parse('$host/posts');
+      final uri = Uri.parse('$host/api/articles');
+      print('Fetching articles from: $uri');
       final response = await http.get(uri).timeout(const Duration(seconds: 8));
+      print('Response status: ${response.statusCode}');
+      print('Response body: ${response.body}');
+      
       if (response.statusCode == 200) {
-        final List<dynamic> data = jsonDecode(response.body);
+        final Map<String, dynamic> responseData = jsonDecode(response.body);
+        final List<dynamic> data = responseData['articles'] ?? [];
+        print('Parsed data length: ${data.length}');
 
         // ID → image mapping (extend as needed)
         final Map<int, String> idToImage = {
@@ -67,17 +73,23 @@ class ArticleService {
         listData =
             data.map((e) {
               final m = Map<String, dynamic>.from(e as Map);
-              final id = (m['id'] as num?)?.toInt() ?? 0;
+              // Map '_id' to 'aid' for Article model compatibility
+              m['aid'] = m['_id']?.toString() ?? '';
+              // Generate a simple ID for image mapping
+              final id = m['_id']?.hashCode ?? 0;
               m['image'] =
-                  idToImage[id] ?? 'https://picsum.photos/seed/$id/800/600';
+                  idToImage[id.abs() % 6 + 1] ?? 'https://picsum.photos/seed/${m['_id']}/800/600';
               return m;
             }).toList();
 
+        print('Processed articles: ${listData.length}');
         return listData;
       } else {
+        print('API returned status: ${response.statusCode}');
         return [];
       }
-    } catch (_) {
+    } catch (e) {
+      print('Error fetching articles: $e');
       return [];
     }
   }

@@ -7,10 +7,6 @@ import 'package:just_a_sec/models/story_model.dart';
 import 'package:just_a_sec/services/camera_service.dart';
 import 'package:just_a_sec/widgets/camera_widget.dart';
 import 'package:just_a_sec/screens/video_posting_screen.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-import 'package:just_a_sec/providers/theme_provider.dart';
-import 'package:just_a_sec/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final VoidCallback onGoBack; // callback to go back to gallery

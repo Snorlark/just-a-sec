@@ -1,28 +1,3 @@
-// class Article {
-//   final int userId;
-//   final int id;
-//   final String title;
-//   final String body;
-//   final String? image;
-
-//   Article({
-//     required this.userId,
-//     required this.id,
-//     required this.title,
-//     required this.body,
-//     this.image,
-//   });
-
-//   factory Article.fromJson(Map<String, dynamic> json) {
-//     return Article(
-//       userId: json['userId'],
-//       id: json['id'],
-//       title: json['title'],
-//       body: json['body'],
-//       image: json['image'] as String?,
-//     );
-//   }
-// }
 
 class Article {
   final String aid;
@@ -30,6 +5,7 @@ class Article {
   final String name;
   final List<String> content;
   final bool isActive;
+  final String image;
 
   Article({
     required this.aid,
@@ -37,14 +13,16 @@ class Article {
     required this.name,
     required this.content,
     required this.isActive,
+    required this.image,
   });
 
   factory Article.fromJson(Map<String, dynamic> json) => Article(
-    aid: json['aid'],
+    aid: json['aid']?.toString() ?? '',
     name: json['name']?.toString() ?? '',
-    title: json['title'],
+    title: json['title']?.toString() ?? '',
     content: List<String>.from(json['content'] ?? []),
     isActive: json['isActive'] ?? true,
+    image: json['image']?.toString() ?? '',
   );
 
   Map<String, dynamic> toJson() => {
@@ -52,5 +30,6 @@ class Article {
     'title': title,
     'content': content,
     'isActive': isActive,
+    'image': image,
   };
 }

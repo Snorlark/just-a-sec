@@ -82,7 +82,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(child: Dialog(
+    return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
       elevation: 0,
       backgroundColor: Colors.transparent,
@@ -98,7 +98,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
             ),
           ],
         ),
-        
+        child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -150,7 +150,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
                                 widget.article == null
                                     ? 'Create a new article with title, author, and content'
                                     : 'Update article information',
-                            fontSize: 16.sp,
+                            fontSize: 12.sp,
                             color: Colors.white.withOpacity(0.8),
                           ),
                         ],
@@ -177,14 +177,14 @@ class _ArticleDialogState extends State<ArticleDialog> {
                           textInputAction: TextInputAction.next,
                           style: TextStyle(
                             color: Colors.grey[800],
-                            fontSize: 16.sp,
+                            fontSize: 15.sp,
                             fontWeight: FontWeight.w500,
                           ),
                           decoration: InputDecoration(
                             hintText: 'Enter article title',
                             hintStyle: TextStyle(
                               color: Colors.grey[400],
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                             ),
                             filled: true,
                             fillColor: Colors.grey[50],
@@ -230,14 +230,14 @@ class _ArticleDialogState extends State<ArticleDialog> {
                           textInputAction: TextInputAction.next,
                           style: TextStyle(
                             color: Colors.grey[800],
-                            fontSize: 16.sp,
+                            fontSize: 15.sp,
                             fontWeight: FontWeight.w500,
                           ),
                           decoration: InputDecoration(
                             hintText: 'Enter author name',
                             hintStyle: TextStyle(
                               color: Colors.grey[400],
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                             ),
                             filled: true,
                             fillColor: Colors.grey[50],
@@ -282,7 +282,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
                           controller: _contentController,
                           style: TextStyle(
                             color: Colors.grey[800],
-                            fontSize: 16.sp,
+                            fontSize: 15.sp,
                             fontWeight: FontWeight.w500,
                           ),
                           minLines: 3,
@@ -292,7 +292,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
                                 'Enter content items (one per line or comma-separated)',
                             hintStyle: TextStyle(
                               color: Colors.grey[400],
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                             ),
                             filled: true,
                             fillColor: Colors.grey[50],
@@ -353,7 +353,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
                                 children: [
                                   CustomText(
                                     text: 'Article Status',
-                                    fontSize: 16.sp,
+                                    fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.grey[800],
                                   ),
@@ -521,7 +521,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
                               child: CustomText(
                                 text:
                                     'Tip: Separate multiple content items using new lines or commas.',
-                                fontSize: 15.sp,
+                                fontSize: 12.sp,
                                 color: Colors.blue[700],
                                 fontStyle: FontStyle.italic,
                               ),
@@ -534,9 +534,10 @@ class _ArticleDialogState extends State<ArticleDialog> {
                 ),
               ),
             ],
-          ),        
+          ),
+        ),
       ),
-    ));
+    );
   }
 
   Widget _buildFormField({
@@ -553,7 +554,7 @@ class _ArticleDialogState extends State<ArticleDialog> {
             SizedBox(width: 8.w),
             CustomText(
               text: label,
-              fontSize: 16.sp,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w600,
               color: Colors.grey[800],
             ),

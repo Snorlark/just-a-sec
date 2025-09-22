@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../config/app_spacing.dart';
-import '../config/constants.dart';
 
 class CustomIconButton extends StatefulWidget {
   final VoidCallback onPressed;
@@ -36,14 +35,11 @@ class _CustomIconButtonState extends State<CustomIconButton> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final bottomPadding = MediaQuery.of(context).padding.bottom;
+    final screenWidth = MediaQuery.of(context).size.width; 
 
     final pressedScale = 0.92; // shrink on press
 
     // Icon button
-    final navBarHeight =
-        70.0 + (bottomPadding > 0 ? bottomPadding : AppSpacing.margin);
     final baseIconSize = screenWidth > 400 ? 30.0 : 28.0;
     final baseCircleSize = screenWidth > 400 ? 45.0 : 50.0;
 
