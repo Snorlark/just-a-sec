@@ -61,7 +61,7 @@ class CustomRoundedNavBar extends StatelessWidget {
                 ),
                 _buildNavItem(
                   index: 2,
-                  icon: Icons.person_outline,
+                  icon: Icons.article_outlined,
                   isSelected: currentIndex == 2,
                   circleSize: circleSize,
                   iconSize: iconSize,

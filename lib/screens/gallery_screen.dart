@@ -6,6 +6,7 @@ import 'dart:io';
 import 'dart:math' as math;
 
 import '../models/user_model.dart';
+import '../config/constants.dart';
 
 class GalleryScreen extends StatefulWidget {
   const GalleryScreen({super.key});
@@ -253,24 +254,43 @@ class _GalleryScreenState extends State<GalleryScreen>
     // Show confirmation dialog
     final confirmed = await showDialog<bool>(
       context: context,
-      builder:
-          (context) => AlertDialog(
-            title: const Text('Delete Story'),
-            content: const Text(
-              'Are you sure you want to delete this story? This action cannot be undone.',
+      builder: (context) => AlertDialog(
+        backgroundColor: const Color.fromARGB(255, 177, 176, 176).withOpacity(0.9),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: Text(
+          'Delete Story?',
+          style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
+        ),
+        content: Text(
+          'Are you sure you want to delete this story? This action cannot be undone.',
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+        actions: [
+          TextButton(
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.white,
+              foregroundColor: PRIMARY,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(false),
-                child: const Text('Cancel'),
-              ),
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(true),
-                style: TextButton.styleFrom(foregroundColor: Colors.red),
-                child: const Text('Delete'),
-              ),
-            ],
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(
+              'Cancel',
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: PRIMARY),
+            ),
           ),
+          TextButton(
+            style: TextButton.styleFrom(
+              backgroundColor: PRIMARY,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            ),
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(
+              'Delete',
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.white),
+            ),
+          ),
+        ],
+      ),
     );
 
     if (confirmed != true) return;
@@ -379,47 +399,68 @@ class _GalleryScreenState extends State<GalleryScreen>
               ),
               child: Icon(
                 _isPolaroidView ? Icons.grid_view : Icons.view_carousel,
-                color: Colors.grey[700],
+                color: Colors.white,
                 size: 24,
               ),
             ),
           ),
-          if (_isPolaroidView && _stories.isNotEmpty)
-            Row(
-              children: [
-                GestureDetector(
-                  onTap: _toggleFlip,
-                  child: Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.1),
-                      shape: BoxShape.circle,
+          Row(
+            children: [
+              if (_isPolaroidView && _stories.isNotEmpty)
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: _toggleFlip,
+                      child: Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.1),
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(
+                          Icons.flip_to_back,
+                          color: Colors.white,
+                          size: 24,
+                        ),
+                      ),
                     ),
-                    child: Icon(
-                      Icons.flip_to_back,
-                      color: Colors.grey[700],
-                      size: 24,
+                    const SizedBox(width: 12),
+                    GestureDetector(
+                      onTap: () => _deleteStory(_currentIndex),
+                      child: Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.1),
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(
+                          Icons.delete_outline,
+                          color: Colors.white,
+                          size: 24,
+                        ),
+                      ),
                     ),
+                    const SizedBox(width: 12),
+                  ],
+                ),
+              // Settings menu icon
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(context, '/settings'),
+                child: Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.person,
+                    color: Colors.white,
+                    size: 24,
                   ),
                 ),
-                const SizedBox(width: 12),
-                GestureDetector(
-                  onTap: () => _deleteStory(_currentIndex),
-                  child: Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.red.withOpacity(0.1),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Icon(
-                      Icons.delete_outline,
-                      color: Colors.red[700],
-                      size: 24,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -545,7 +586,7 @@ class _GalleryScreenState extends State<GalleryScreen>
 
     return Container(
       height: polaroidHeight,
-      margin: const EdgeInsets.symmetric(horizontal: 12.0),
+      margin: const EdgeInsets.fromLTRB(12.0, 0, 12.0, 16.0),
       child: AnimatedBuilder(
         animation: _flipAnimation,
         builder: (context, child) {
@@ -869,20 +910,6 @@ class _GalleryScreenState extends State<GalleryScreen>
       return const Center(child: CircularProgressIndicator());
     }
 
-    if (_stories.isEmpty) {
-      return const Center(
-        child: Text(
-          'No stories found.\nRecord a video first!',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 18,
-            color: Colors.grey,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      );
-    }
-
     return Column(
       children: [
         // Fixed app bar
@@ -890,18 +917,29 @@ class _GalleryScreenState extends State<GalleryScreen>
 
         // Main content area
         Expanded(
-          child:
-              _isPolaroidView
+          child: _stories.isEmpty
+              ? const Center(
+                  child: Text(
+                    'No stories found.\nRecord a video first!',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                )
+              : (_isPolaroidView
                   ? PageView.builder(
-                    controller: _pageController,
-                    onPageChanged: _onPageChanged,
-                    scrollDirection: Axis.vertical,
-                    itemCount: _stories.length,
-                    itemBuilder: (context, index) {
-                      return _buildPolaroidFrame(_stories[index], index);
-                    },
-                  )
-                  : _buildGridView(),
+                      controller: _pageController,
+                      onPageChanged: _onPageChanged,
+                      scrollDirection: Axis.vertical,
+                      itemCount: _stories.length,
+                      itemBuilder: (context, index) {
+                        return _buildPolaroidFrame(_stories[index], index);
+                      },
+                    )
+                  : _buildGridView()),
         ),
       ],
     );

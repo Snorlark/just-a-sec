@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:just_a_sec/config/constants.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
@@ -67,9 +68,9 @@ class CustomTextField extends StatelessWidget {
         onSaved: onSaved,
         enabled: enabled,
         style: const TextStyle(
-          color: Colors.white,
+          color: PRIMARY,
           fontSize: 18,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.bold,
         ),
         decoration: InputDecoration(
           hintText: hintText,
@@ -202,3 +203,6 @@ class _CustomTextFieldExampleState extends State<CustomTextFieldExample> {
     );
   }
 }
+
+
+
