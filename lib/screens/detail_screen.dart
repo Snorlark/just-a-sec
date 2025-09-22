@@ -18,6 +18,7 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   bool _isEditMode = false;
   bool _isSaving = false;
+  late Article _currentArticle;
 
   late TextEditingController _titleController;
   late TextEditingController _authorController;
@@ -28,12 +29,13 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   void initState() {
     super.initState();
-    _titleController = TextEditingController(text: widget.article.title);
-    _authorController = TextEditingController(text: widget.article.name);
+    _currentArticle = widget.article;
+    _titleController = TextEditingController(text: _currentArticle.title);
+    _authorController = TextEditingController(text: _currentArticle.name);
     _contentController = TextEditingController(
-      text: widget.article.content.join('\n'),
+      text: _currentArticle.content.join('\n'),
     );
-    _isActive = widget.article.isActive;
+    _isActive = _currentArticle.isActive;
     _formKey = GlobalKey<FormState>();
   }
 
@@ -67,9 +69,26 @@ class _DetailScreenState extends State<DetailScreen> {
         'isActive': _isActive,
       };
 
-      await ArticleService().updateArticle(widget.article.aid, payload);
+      print('Article ID for update: ${_currentArticle.aid}');
+      print('Article title: ${_currentArticle.title}');
+      print('Payload: $payload');
 
-      setState(() => _isEditMode = false);
+      await ArticleService().updateArticle(_currentArticle.aid, payload);
+
+      // Create a new article object with updated values
+      final updatedArticle = Article(
+        aid: _currentArticle.aid,
+        title: _titleController.text.trim(),
+        name: _authorController.text.trim(),
+        content: _toList(_contentController.text),
+        isActive: _isActive,
+        image: _currentArticle.image,
+      );
+
+      setState(() {
+        _isEditMode = false;
+        _currentArticle = updatedArticle;
+      });
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -90,10 +109,10 @@ class _DetailScreenState extends State<DetailScreen> {
   void _cancelEdit() {
     setState(() {
       _isEditMode = false;
-      _titleController.text = widget.article.title;
-      _authorController.text = widget.article.name;
-      _contentController.text = widget.article.content.join('\n');
-      _isActive = widget.article.isActive;
+      _titleController.text = _currentArticle.title;
+      _authorController.text = _currentArticle.name;
+      _contentController.text = _currentArticle.content.join('\n');
+      _isActive = _currentArticle.isActive;
     });
   }
 
@@ -138,12 +157,12 @@ class _DetailScreenState extends State<DetailScreen> {
                     ),
                 ],
                 flexibleSpace: FlexibleSpaceBar(
-                  background: widget.article.image.isNotEmpty
+                  background: _currentArticle.image.isNotEmpty
                       ? Stack(
                           fit: StackFit.expand,
                           children: [
                             Image.network(
-                              widget.article.image,
+                              _currentArticle.image,
                               fit: BoxFit.cover,
                               errorBuilder: (context, error, stackTrace) {
                                 return _buildFallbackImage();
@@ -186,7 +205,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CustomText(
-                                    text: _isEditMode ? _titleController.text : widget.article.title,
+                                    text: _isEditMode ? _titleController.text : _currentArticle.title,
                                     fontSize: 24.sp,
                                     fontWeight: FontWeight.w800,
                                     color: Colors.white,
@@ -202,7 +221,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                       ),
                                       SizedBox(width: 6.w),
                                       CustomText(
-                                        text: widget.article.name,
+                                        text: _currentArticle.name,
                                         fontSize: 16.sp,
                                         color: Colors.white70,
                                         fontWeight: FontWeight.w500,
@@ -214,13 +233,13 @@ class _DetailScreenState extends State<DetailScreen> {
                                           vertical: 4.h,
                                         ),
                                         decoration: BoxDecoration(
-                                          color: widget.article.isActive
+                                          color: _currentArticle.isActive
                                               ? Colors.green
                                               : Colors.grey[600],
                                           borderRadius: BorderRadius.circular(20.r),
                                         ),
                                         child: CustomText(
-                                          text: widget.article.isActive ? 'Active' : 'Inactive',
+                                          text: _currentArticle.isActive ? 'Active' : 'Inactive',
                                           fontSize: 16.sp,
                                           color: Colors.white,
                                           fontWeight: FontWeight.w600,
@@ -369,20 +388,20 @@ class _DetailScreenState extends State<DetailScreen> {
               _buildDetailRow(
                 icon: Icons.title,
                 label: 'Title',
-                value: widget.article.title,
+                value: _currentArticle.title,
               ),
               SizedBox(height: 12.h),
               _buildDetailRow(
                 icon: Icons.person,
                 label: 'Author',
-                value: widget.article.name,
+                value: _currentArticle.name,
               ),
               SizedBox(height: 12.h),
               _buildDetailRow(
-                icon: widget.article.isActive ? Icons.check_circle : Icons.cancel,
+                icon: _currentArticle.isActive ? Icons.check_circle : Icons.cancel,
                 label: 'Status',
-                value: widget.article.isActive ? 'Active' : 'Inactive',
-                valueColor: widget.article.isActive ? Colors.green : Colors.red,
+                value: _currentArticle.isActive ? 'Active' : 'Inactive',
+                valueColor: _currentArticle.isActive ? Colors.green : Colors.red,
               ),
             ],
           ),
@@ -423,13 +442,13 @@ class _DetailScreenState extends State<DetailScreen> {
             ],
           ),
           child: Column(
-            children: widget.article.content.asMap().entries.map((entry) {
+            children: _currentArticle.content.asMap().entries.map((entry) {
               final index = entry.key;
               final item = entry.value;
               return Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
                 decoration: BoxDecoration(
-                  border: index < widget.article.content.length - 1
+                  border: index < _currentArticle.content.length - 1
                       ? Border(
                           bottom: BorderSide(color: Colors.grey[100]!),
                         )

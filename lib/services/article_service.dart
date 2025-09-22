@@ -28,14 +28,22 @@ class ArticleService {
   }
 
   Future<Map> updateArticle(String id, dynamic article) async {
+    final uri = Uri.parse('$host/api/articles/$id');
+    print('Updating article at: $uri');
+    print('Article ID: $id');
+    print('Payload: $article');
+    
     final response = await http.put(
-      Uri.parse('$host/api/articles/$id'),
+      uri,
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
       body: jsonEncode(article),
     );
+    
+    print('Update response status: ${response.statusCode}');
+    print('Update response body: ${response.body}');
 
     if (response.statusCode == 200 || response.statusCode == 201) {
       final data = jsonDecode(response.body);
