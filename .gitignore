@@ -84,3 +84,6 @@ fastlane/screenshots/
 # Do NOT ignore for Flutter apps (keep lockfile in repo)
 #! pubspec.lock
 
+
+babao_valdez_backend\node_modules\
+node_modules/
