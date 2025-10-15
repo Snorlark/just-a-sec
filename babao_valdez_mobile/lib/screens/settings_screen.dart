@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../custom/custom_text.dart';
-import '../models/user_model.dart';
 import '../providers/theme_provider.dart';
 import '../config/constants.dart';
+import '../services/user_service.dart';
+import 'account_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -15,58 +16,14 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  UserModel? _user;
-  final _formKey = GlobalKey<FormState>();
-  final TextEditingController _firstName = TextEditingController();
-  final TextEditingController _lastName = TextEditingController();
-  final TextEditingController _username = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    _loadUser();
-  }
-
-  Future<void> _loadUser() async {
-    final box = await Hive.openBox<UserModel>('userBox');
-    final user = box.get('currentUser');
-    setState(() {
-      _user = user;
-      _firstName.text = user?.firstName ?? '';
-      _lastName.text = user?.lastName ?? '';
-      _username.text = user?.username ?? '';
-    });
-  }
 
   Future<void> _persistTheme(bool isDark) async {
-    final box = await Hive.openBox('settingsBox');
-    await box.put('darkMode', isDark);
-  }
-
-  Future<void> _saveProfile() async {
-    if (!_formKey.currentState!.validate()) return;
-    final box = await Hive.openBox<UserModel>('userBox');
-    final updated = UserModel(
-      username: _username.text.trim(),
-      firstName: _firstName.text.trim(),
-      lastName: _lastName.text.trim(),
-      profilePicturePath: _user?.profilePicturePath,
-      profilePictureDate: _user?.profilePictureDate,
-    );
-    await box.put('currentUser', updated);
-    setState(() => _user = updated);
-    if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Profile updated')),
-      );
-    }
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('darkMode', isDark);
   }
 
   @override
   void dispose() {
-    _firstName.dispose();
-    _lastName.dispose();
-    _username.dispose();
     super.dispose();
   }
 
@@ -85,86 +42,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
           fontWeight: FontWeight.w700,
           color: Colors.white,
         ),
-        actions: [
-          TextButton(
-            onPressed: _saveProfile,
-            child: const CustomText(text: 'Save', fontSize: 16, color: Colors.white),
-          ),
-        ],
       ),
       body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(20),
+        child: Column(
           children: [
-            // Profile section
-            const CustomText(text: 'Profile', fontSize: 22, fontWeight: FontWeight.w700, color: Colors.white),
-            const SizedBox(height: 12),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.06),
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.white.withOpacity(0.15)),
-              ),
-              padding: const EdgeInsets.all(16),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 24,
-                          backgroundColor: Colors.white,
-                          child: CustomText(text: _user == null ? 'U' : _initials(_user!), fontSize: 16, fontWeight: FontWeight.w700, color: PRIMARY),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: TextFormField(
-                            controller: _username,
-                            style: const TextStyle(color: Colors.white),
-                            decoration: _fieldDecoration('Username'),
-                            validator: (v) => (v == null || v.trim().isEmpty) ? 'Username required' : null,
-                          ),
-                        ),
-                      ],
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.all(20),
+                children: [
+                  const CustomText(text: 'Account', fontSize: 22, fontWeight: FontWeight.w700, color: Colors.white),
+                  const SizedBox(height: 12),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.06),
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(color: Colors.white.withOpacity(0.15)),
                     ),
-                    const SizedBox(height: 12),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: TextFormField(
-                            controller: _firstName,
-                            style: const TextStyle(color: Colors.white),
-                            decoration: _fieldDecoration('First name'),
-                            validator: (v) => null,
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: TextFormField(
-                            controller: _lastName,
-                            style: const TextStyle(color: Colors.white),
-                            decoration: _fieldDecoration('Last name'),
-                            validator: (v) => null,
-                          ),
-                        ),
-                      ],
+                    child: ListTile(
+                      leading: const Icon(Icons.person, color: Colors.white),
+                      title: const CustomText(text: 'Profile', fontSize: 16, color: Colors.white),
+                      trailing: const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.white70),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AccountScreen()));
+                      },
                     ),
-                    const SizedBox(height: 8),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: _saveProfile,
-                        child: const CustomText(text: 'Save changes', fontSize: 14, color: Colors.white),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+                  ),
 
-            const SizedBox(height: 24),
+                  const SizedBox(height: 24),
             // Theme section
             const CustomText(text: 'Appearance', fontSize: 22, fontWeight: FontWeight.w700, color: Colors.white),
             const SizedBox(height: 12),
@@ -191,6 +95,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ],
               ),
             ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.06),
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: Colors.white.withOpacity(0.15)),
+                ),
+                child: ListTile(
+                  leading: const Icon(Icons.logout, color: Colors.white),
+                  title: const CustomText(text: 'Logout', fontSize: 16, color: Colors.white),
+                  onTap: () async {
+                    await UserService().logout();
+                    if (!mounted) return;
+                    Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
+                  },
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -214,19 +140,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  String _displayName(UserModel user) {
-    final first = (user.firstName ?? '').trim();
-    final last = (user.lastName ?? '').trim();
-    if (first.isEmpty && last.isEmpty) return user.username ?? 'User';
+  String _displayNameFromMap(Map<String, dynamic> user) {
+    final first = (user['firstName'] ?? '').toString().trim();
+    final last = (user['lastName'] ?? '').toString().trim();
+    final username = (user['username'] ?? 'User').toString();
+    if (first.isEmpty && last.isEmpty) return username;
     return [first, last].where((e) => e.isNotEmpty).join(' ');
-  }
-
-  String _initials(UserModel user) {
-    final name = _displayName(user);
-    final parts = name.trim().split(RegExp(r'\s+'));
-    if (parts.length == 1) return parts.first.characters.take(2).toString().toUpperCase();
-    final first = parts.first.isNotEmpty ? parts.first[0] : '';
-    final last = parts.last.isNotEmpty ? parts.last[0] : '';
-    return (first + last).toUpperCase();
   }
 }

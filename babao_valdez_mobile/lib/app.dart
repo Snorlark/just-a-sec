@@ -8,6 +8,7 @@ import 'screens/main_nav_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/splash_screen.dart';
 import 'screens/settings_screen.dart';
+import 'screens/login_screen.dart';
 
 class JustASecApp extends StatelessWidget {
   const JustASecApp({super.key, this.initialDark = false});
@@ -36,6 +37,7 @@ class JustASecApp extends StatelessWidget {
               '/register': (_) => const RegisterScreen(),
               '/main': (_) => const MainNavScreen(),
               '/settings': (_) => const SettingsScreen(),
+              '/login': (_) => const LoginScreen(),
             },
           );
         },

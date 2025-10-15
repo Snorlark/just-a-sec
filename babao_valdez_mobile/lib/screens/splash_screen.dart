@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 
 import '../config/app_spacing.dart';
 import '../custom/custom_button_widget.dart';
 import '../custom/custom_transition.dart';
-import '../models/user_model.dart';
 import '../widgets/responsive_container_widget.dart';
-import 'register_screen.dart';
+import '../services/user_service.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,11 +21,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _checkUser() async {
-    var box = await Hive.openBox<UserModel>('userBox');
-    var user = box.get('currentUser');
-
-    if (user != null) {
-      // User exists → Go to HomeScreen
+    final loggedIn = await UserService().isLoggedIn();
+    if (!mounted) return;
+    if (loggedIn) {
       Navigator.pushReplacementNamed(context, '/main');
     }
   }
@@ -58,9 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   SizedBox(height: AppSpacing.gutter),
                   CustomButtonWidget(
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        CustomTransition(page: RegisterScreen()),
-                      );
+                      Navigator.pushReplacementNamed(context, '/login');
                     },
                   ),
 

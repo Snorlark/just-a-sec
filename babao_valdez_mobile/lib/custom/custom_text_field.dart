@@ -68,10 +68,11 @@ class CustomTextField extends StatelessWidget {
         onSaved: onSaved,
         enabled: enabled,
         style: const TextStyle(
-          color: PRIMARY,
+          color: Colors.white,
           fontSize: 18,
           fontWeight: FontWeight.bold,
         ),
+        cursorColor: Colors.white,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(
