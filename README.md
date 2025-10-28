@@ -25,7 +25,7 @@
     <a href="https://github.com/Snorlark/just-a-sec"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="./app-demo.mp4">View Demo (video)</a>
+    <a href="https://drive.google.com/file/d/1mzSWNEacpPiUCOh4lHabowGD134eNLDk/view?usp=sharing">View Demo (video)</a>
     &middot;
     <a href="https://github.com/Snorlark/just-a-sec/issues">Report Bug</a>
     &middot;
